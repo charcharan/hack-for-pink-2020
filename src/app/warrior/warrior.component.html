@@ -1,0 +1,74 @@
+<div fxLayout="column">
+  <div fxLayout.gt-md="row" fxLayout.lt-lg="column">
+      <section class="weather__card"          
+        [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openStudentDir()">
+          <span class="city-name__text">Consult With Doctor</span>
+          <div class="circle">          
+          24
+          </div>
+          <div class="temperature-text__container">
+          <span class="weather-condition__text">Search for Kids..</span>
+          </div>      
+
+    </section>
+    <section class="weather__card"          
+        [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}">
+          <span class="city-name__text">Report Scanning</span>
+          <div class="circle">          
+            10
+            </div>
+          <div class="temperature-text__container">
+          <span class="weather-condition__text">Add Daily Events</span>
+          </div>      
+
+      </section>
+      <section class="weather__card"          
+              [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openPendingPermission()">
+        <span class="city-name__text">Make a Wish</span>
+        <div class="circle">          
+          02
+          </div>
+        <div class="temperature-text__container">
+          <span class="weather-condition__text">Leave request, Doctor Appointment</span>
+        </div>      
+
+      </section>    
+  </div>
+
+  <div fxLayout.gt-md="row" fxLayout.lt-lg="column">
+      <section class="weather__card"          
+              [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}">
+        <span class="city-name__text">Nearby Centre Detials</span>
+        <div class="circle">          
+          10
+          </div>
+        <div class="temperature-text__container">
+          <span class="weather-condition__text">Setup Admission Process</span>
+        </div>     
+
+      </section>
+
+      <section class="weather__card"          
+              [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}">
+        <span class="city-name__text">Secure Image Sharing</span>
+        <div class="circle">          
+          35
+          </div>
+        <div class="temperature-text__container">
+          <span class="weather-condition__text">School admission approvals</span>
+        </div>    
+
+      </section>
+      <section class="weather__card"          
+              [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openAnnouncement()">
+        <span class="city-name__text" >Announcements</span>
+        <div class="circle">          
+          06
+          </div>
+        <div class="temperature-text__container">
+          <span class="weather-condition__text">News Feed</span>
+        </div>    
+
+      </section>
+    </div>
+</div>

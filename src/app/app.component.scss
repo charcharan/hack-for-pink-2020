@@ -5,7 +5,8 @@
     align-items: center;
     flex-flow: column;
     transition: background 300ms linear;
-    background-image: linear-gradient(to top, #5ee7df 0%, #66a6ff 100%);
+    // background-image: linear-gradient(to top, #5ee7df 0%, #66a6ff 100%);
+    background-image: linear-gradient(to top, #d85ee7b0 0%, #ff66d0 100%)
   }
   
   .root__container-dark {
@@ -63,7 +64,7 @@
     left: 0;
     z-index: 50;
     // min-height: 100vh;
-    max-height: 39vw;
+    max-height: 55vw;
     // overflow-y: scroll;
     width: 90%;
     max-width: 20rem;
@@ -105,7 +106,7 @@
   }
   
   .menu-header {
-    background: linear-gradient(to right, #00FF9B, #5f84fb);
+    background: linear-gradient(to right,  #ff66d0, #d85ee7b0);
     display: grid;
     grid-template-rows: 1fr 4fr;
     grid-template-columns: 1fr 4fr;

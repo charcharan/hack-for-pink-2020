@@ -28,11 +28,13 @@ import { DialogOverviewComponent } from './dialog-overview/dialog-overview.compo
 import { RegistrationSuccessDialogComponent } from './registration-success-dialog/registration-success-dialog.component';
 import { DatePipe } from  '@angular/common';
 import { FullCalendarModule } from '@fullcalendar/angular'; 
+import { DoctorComponent } from '../app/doctor/doctor.component';
+import { WarriorComponent } from '../app/warrior/warrior.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponentComponent,StudentRegistrationComponent,
     AdminHomeComponent, SignUpSuccessDialogComponent,DialogOverviewComponent,
-    RegistrationSuccessDialogComponent],
+    RegistrationSuccessDialogComponent,DoctorComponent,WarriorComponent],
     
   imports: [
     BrowserModule,

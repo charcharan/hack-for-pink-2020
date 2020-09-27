@@ -18,27 +18,18 @@
     <section class="menu-body">
       <ul class="menu-links" [ngClass]="{'menu-links-dark': darkModeActive}" (click)="toggleMenu()">
         <!-- Parent links -->
-        <li class="menu-link" *ngIf="userType==='parent'" [routerLinkActiveOptions]="{exact:true}" routerLink="/studReg" routerLinkActive="link-active">Student Registration</li>
-        <li class="menu-link" *ngIf="userType==='parent'" [routerLinkActiveOptions]="{exact:true}" routerLink="/perReq" routerLinkActive="link-active">Permission Request</li>
-        <li class="menu-link" *ngIf="userType==='parent'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Calendar</li>
+        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/studReg" routerLinkActive="link-active">Image Sharing</li>
+        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/perReq" routerLinkActive="link-active">Counseling/Motivational Support</li>
+        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Raising Funds</li>
+        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Notifications</li>
         <!-- Admin links -->
-        <li class="menu-link" *ngIf="userType==='admin'" [routerLinkActiveOptions]="{exact:true}" routerLink="/search" routerLinkActive="link-active">Student Directory</li>
-        <li class="menu-link" *ngIf="userType==='admin'" [routerLinkActiveOptions]="{exact:true}" routerLink="/stir" routerLinkActive="link-active">Admission Process</li>
-        <li class="menu-link" *ngIf="userType==='admin'" [routerLinkActiveOptions]="{exact:true}" routerLink="/pendingRequest" routerLinkActive="link-active">Pending Requests</li>
-        <li class="menu-link" *ngIf="userType==='admin'" [routerLinkActiveOptions]="{exact:true}" routerLink="/trackBus" routerLinkActive="link-active" >Bus Tracking</li>
-        <li class="menu-link" *ngIf="userType==='admin'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Announcements</li>
-         <!-- Driver links -->
-         <li class="menu-link" *ngIf="userType==='driver'" [routerLinkActiveOptions]="{exact:true}" routerLink="/drivHome" routerLinkActive="link-active">Driver Home</li>
-         <!-- Staff links -->
-        <li class="menu-link" *ngIf="userType==='staff'" [routerLinkActiveOptions]="{exact:true}" routerLink="/search" routerLinkActive="link-active">Student Directory</li>
-        <li class="menu-link" *ngIf="userType==='staff'" [routerLinkActiveOptions]="{exact:true}" routerLink="/sDir" routerLinkActive="link-active">Pending Requests</li>
-        <li class="menu-link" *ngIf="userType==='staff'" [routerLinkActiveOptions]="{exact:true}" routerLink="/homeWork" routerLinkActive="link-active">Update Results/Homework</li>
-        <li class="menu-link" *ngIf="userType==='staff'" [routerLinkActiveOptions]="{exact:true}" routerLink="/sDir" routerLinkActive="link-active">Attendance Management</li>
-         <!-- Student links -->
-         <li class="menu-link" *ngIf="userType==='student'" [routerLinkActiveOptions]="{exact:true}" routerLink="/onlineBooks" routerLinkActive="link-active">E books</li>
-         <li class="menu-link" *ngIf="userType==='student'" [routerLinkActiveOptions]="{exact:true}" routerLink="/recordedClass" routerLinkActive="link-active">Recorded Classes</li>
-         <li class="menu-link" *ngIf="userType==='student'" [routerLinkActiveOptions]="{exact:true}" routerLink="/homeworkList" routerLinkActive="link-active">Homeworks</li>
-         <li class="menu-link" *ngIf="userType==='student'" [routerLinkActiveOptions]="{exact:true}" routerLink="/schoolBlog" routerLinkActive="link-active">School Blog</li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/search" routerLinkActive="link-active">Self Test Questionaire</li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/stir" routerLinkActive="link-active">Consulting with doctor</li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/pendingRequest" routerLinkActive="link-active">Report scanning </li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/trackBus" routerLinkActive="link-active" >Make a Wish</li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Notifications</li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Near by centers details</li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Image Sharing</li>
         <li (click)="logout()" class="menu-link">Logout</li>
       </ul>
     </section>

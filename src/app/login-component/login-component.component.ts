@@ -33,8 +33,8 @@ export class LoginComponentComponent implements OnInit {
   subscribe:Subscription;
   invalidLogin:boolean = false;
   errorMsg:string;
-   types:any=[{"value":1,"viewValue":"Non Student"},
-  {"value":2,"viewValue":"Student"}];
+   types:any=[{"value":1,"viewValue":"Doctor"},
+  {"value":2,"viewValue":"Warrior"}];
   ngOnInit() {
     this.selectedValue = 1;
     this.somePlaceholder = "Username";
@@ -137,7 +137,7 @@ export class LoginComponentComponent implements OnInit {
     }else if(this.selectedValue === 2){
       this.othersLogin = false;
       this.studentLogin = true;
-      this.somePlaceholder = "Roll Number"
+      this.somePlaceholder = "Warrior Name"
     }
     //   this.studentLogin = false;
     // }else if(this.selectedValue === 3){
@@ -153,7 +153,7 @@ export class LoginComponentComponent implements OnInit {
       code : 200,
       message : "Login Successful",
       data : '',
-      userType: 'admin',
+      userType: this.loginForm.get('password').value === 'doctor123' ? 'doctor' : 'warrior'
     };
     this.success(res);
     // if(this.studentLogin){
@@ -279,16 +279,13 @@ export class LoginComponentComponent implements OnInit {
 	// Login success function
 	success(data){
     console.log("success -> data", data)
-    this.app.reload();
-		if (data.code == 200 && data.userType === "parent") {	    
-      this.runTimer(); 
-      this.ngZone.run(() => {
-        this.router.navigate(['/parentHome']);
-      });
-			// this.router.navigate(['/parentHome']);
-		}else if(data.code == 200 && data.userType === "admin"){		
-      this.runTimer(); 
-			this.router.navigate(['/admHome']);
+   
+		if (data.code == 200 && data.userType === "doctor") {
+      this.loginService.userType = 'doctor';
+			this.router.navigate(['/doctor']);
+		}else if(data.code == 200 && data.userType === "warrior"){
+      this.loginService.userType = 'warrior';
+			this.router.navigate(['/warrior']);
 		}	else if(data.code == 200 && data.userType === "driver"){     
       this.router.navigate(['/drivHome']);
     } else if(data.code == 200 && data.userType === "staff"){     
@@ -300,6 +297,7 @@ export class LoginComponentComponent implements OnInit {
       this.invalidLogin = true;
       this.errorMsg = this.studentLogin ? "Roll Number" : "Username"+  "or Password are Incorrect";
     }
+    this.app.reload();
   }
   openSuccessDialog() {
     this.dialog.open(SignUpSuccessDialogComponent);
