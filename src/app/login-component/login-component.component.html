@@ -1,0 +1,220 @@
+<section class="weather__card" 
+         
+         [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}">
+  <div class="welcomeMsg">
+    <img src="assets/loginlogo.png" ngClass.gt-sm="login-logo" ngClass.lt-lg="login-logo-mobile">               
+  </div>  
+  <div class="loginContainer">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="2vw">
+      <div fxFlex="40" class="quickLogin" fxLayoutAlign="center start">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2vh">
+          <div style="margin-top: 2vh;">
+          </div>
+          <div fxFlex="10">            
+          </div>      
+          <div  fxFlex="90" style="margin-top: 6vh;">           
+                <div><a href="#" class="fb btn">
+                  <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+                 </a>
+                </div>
+                <div  (click)="doGoogleLogin()"><a href="#" class="google btn"><i class="fa fa-google fa-fw">
+                </i> Login with Google
+              </a></div>
+                <div ><a href="#" class="instagram btn">
+                  <i class="fa fa-instagram fa-fw"></i> Login with Instagram
+                </a></div>
+                <div ><a href="#" class="twitter btn">
+                  <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+                </a></div>
+                <div><a href="#" class="linkedin btn">
+                  <i class="fa fa-linkedin fa-fw"></i> Login with LinkedIn
+                </a></div>
+          </div>     
+                  
+        </div>
+      </div>     
+      <div fxFlex="55" class="quickLogin" fxLayoutAlign="center start">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div style="margin-top: 3vh;">
+            <mat-tab-group [(selectedIndex)]="selectedTab" (selectedTabChange)="onTabChanged($event)" ngStyle.gt-sm="padding-bottom: 2vw;">
+              <mat-tab label="Login"></mat-tab>
+              <mat-tab label="SignUp"></mat-tab>
+            </mat-tab-group>
+            <div fxLayoutAlign="center center">
+              <mat-form-field *ngIf="login">
+                <mat-select [(ngModel)]="selectedValue" name="loginTypes" (selectionChange)="typeChange()">
+                  <mat-option *ngFor="let useType of types" [value]="useType.value" >
+                    {{useType.viewValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div *ngIf="login">
+            <div fxLayout="column">
+              
+              <div fxFlex="50" style="margin-top: 2vh;">
+                <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+                  <mat-form-field>
+                    <input matInput  formControlName="userName" placeholder="{{somePlaceholder}}">
+                  </mat-form-field>
+                  <br>
+                  <mat-form-field>
+                    <input matInput  type="password" formControlName="password" placeholder="Password">
+                  </mat-form-field> 
+                  <div *ngIf="invalidLogin">
+                    <span class="error-message">{{errorMsg}}</span>
+                  </div>
+                  <br>
+                  <button mat-raised-button color="primary" type="submit" class="butMob">Login</button>&nbsp;&nbsp;
+                  <button (click)="resetForm(1)" mat-raised-button color="warn">Reset</button>
+                </form>
+              </div>    
+            </div>  
+          </div>    
+          <div *ngIf="signUp"> 
+            <div fxLayout="column">
+             
+              <div fxFlex="50" style="margin-top: 2vh;">
+                <form [formGroup]="signUpForm" (ngSubmit)="doSignUp()">
+                  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
+                    <div fxFlex="50">
+                      <mat-form-field>
+                        <input matInput  formControlName="firstName" placeholder="First name">
+                      </mat-form-field>
+                    </div>
+                    <div fxFlex="50">
+                      <mat-form-field>
+                        <input matInput  formControlName="lastName" placeholder="Last name">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
+                    <div fxFlex="50">
+                      <mat-form-field>
+                        <input matInput  type="email" formControlName="emailId" placeholder="Email Id">
+                      </mat-form-field>
+                    </div>
+                    <div fxFlex="50">
+                      <mat-form-field>
+                        <input matInput  type="password" formControlName="password" placeholder="Password">
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div fxLayout="row"  fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
+                    <div fxFlex="50">
+                      <mat-form-field>
+                        <input matInput  type="password" formControlName="confirmPassword" placeholder="Confirm Password"
+                                (keyup)="checkPassword($event)">
+                        <mat-error *ngIf="signUpForm.controls['confirmPassword'].errors">
+                          <div [hidden]="!signUpForm.get('confirmPassword').errors.pwdMatch">
+                            <span class="error-message">Password does not match</span>
+                          </div>      
+                        </mat-error>
+                      </mat-form-field>                   
+                    </div>
+                    <div fxFlex="50" fxLayoutAlign="space-between end">
+                      <button mat-raised-button color="primary" type="submit">SignUp</button>&nbsp;&nbsp;
+                      <button (click)="resetForm(2)" mat-raised-button color="warn">Reset</button>
+                    </div>
+                  </div>
+                </form>
+              </div>   
+            </div>      
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <!-- <div *ngIf="signUp" class="loginContainer">
+      <div class="quickLogin" fxLayoutAlign="center start">
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div style="margin-top: 3vh;">
+
+          </div>
+          <div fxFlex="20">
+            <div fxLayout="row">
+              <div fxFlex="100">Sign Up Form</div>
+            </div>
+          </div>      
+          <div fxFlex="50" style="margin-top: 2vh;">
+            <form [formGroup]="signUpForm" (ngSubmit)="doSignUp()">
+              <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
+                <div fxFlex="50">
+                  <mat-form-field>
+                    <input matInput  formControlName="firstName" placeholder="First name">
+                  </mat-form-field>
+                </div>
+                <div fxFlex="50">
+                  <mat-form-field>
+                    <input matInput  formControlName="lastName" placeholder="Last name">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
+                <div fxFlex="50">
+                  <mat-form-field>
+                    <input matInput  type="email" formControlName="emailId" placeholder="Email Id">
+                  </mat-form-field>
+                </div>
+                <div fxFlex="50">
+                  <mat-form-field>
+                    <input matInput  type="password" formControlName="password" placeholder="Password">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div fxLayout="row"  fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
+                <div fxFlex="50">
+                  <mat-form-field>
+                    <input matInput  type="password" formControlName="confirmPassword" placeholder="Confirm Password"
+                            (keyup)="checkPassword($event)">
+                    <mat-error *ngIf="signUpForm.controls['confirmPassword'].errors">
+                      <div [hidden]="!signUpForm.get('confirmPassword').errors.pwdMatch">
+                        <span class="error-message">Password does not match</span>
+                      </div>      
+                    </mat-error>
+                  </mat-form-field>                   
+                </div>
+                <div fxFlex="50" fxLayoutAlign="space-between end">
+                  <button mat-raised-button color="primary" type="submit">SignUp</button>&nbsp;&nbsp;
+                  <button (click)="resetForm(2)" mat-raised-button color="warn">Reset</button>
+                </div>
+              </div>
+            </form>
+          </div>          
+        </div>
+    </div>
+  </div>   -->
+  <!-- <div *ngIf="studentLogin"  class="loginContainerStudent">
+    <div class="quickLogin">
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <div style="margin-top: 3vh;">
+
+        </div>
+        <div fxFlex="20">
+          <div fxLayout="row">
+            <div fxFlex="100">Student Login Form</div>
+          </div>
+        </div>      
+        <div fxFlex="50" style="margin-top: 2vh;">
+          <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+            <mat-form-field>
+              <input matInput  formControlName="userName" placeholder="Roll Number">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+              <input matInput  type="password" formControlName="password" placeholder="Password">
+            </mat-form-field> 
+            <div *ngIf="invalidLogin">
+              <span class="error-message">Roll Number or Pasword is incorrect</span>
+            </div>
+            <br>
+            <button mat-raised-button color="primary" type="submit" class="butMob">Login</button>&nbsp;&nbsp;
+            <button (click)="resetForm(3)" mat-raised-button color="warn">Reset</button>
+          </form>
+        </div>          
+      </div>
+    </div>
+  </div> -->
+</section>

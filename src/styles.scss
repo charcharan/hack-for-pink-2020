@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@fullcalendar/core/main.css';  
+@import '~@fullcalendar/daygrid/main.css';  
+html, body { height: 100%; }
+body { margin: 0; font-family: SegoeUI-Semibold,Segoe UI; }
+.card {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+    margin-bottom: 15px;
+  }
+
+  .root__container {
+    width: 100%;
+    // min-height: 100vh;
+    // display: flex;
+    // align-items: center;
+    flex-flow: column;
+    transition: background 300ms linear;
+    background-image: linear-gradient(to top, #5ee7df 0%, #66a6ff 100%);
+  }

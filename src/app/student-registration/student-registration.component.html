@@ -1,0 +1,276 @@
+<div>
+    <mat-card class="card marginTop">
+        <mat-card-header>
+            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+            <mat-card-title>
+                Parents Details
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="studentRegistrationForm">                <div fxLayout="row" fxLayout.xs="column">
+                   
+                    <mat-form-field  fxFlex="50" fxLayoutGap="2vw">
+                        <mat-label>Father's Name</mat-label>
+                        <input  matInput
+                            placeholder="Enter Father's Name" id="fatherName" formControlName="fatherName"
+                            type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Father's name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Mother's Name</mat-label>
+                        <input  matInput
+                            placeholder="Enter Mother's Name" name="motherName" required formControlName="motherName"
+                            type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Mother's name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field  fxFlex="50" fxLayoutGap="2vw">
+                        <mat-label>Father's qualification</mat-label>
+                        <input  matInput
+                            placeholder="Enter Father's qualification" name="fatherQualification"
+                            formControlName="fatherQualification" type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Father's qualification is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Mother's qualification</mat-label>
+                        <input  matInput
+                            placeholder="Enter Mother's qualification" name="motherQualification" required
+                            formControlName="motherQualification" type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Mother's qualification is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Father's occupation</mat-label>
+                        <input  matInput
+                            placeholder="Enter Father's occupation" name="fatherOccupation" required
+                            formControlName="fatherOccupation" type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Father's occupation is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Mother's occupation</mat-label>
+                        <input  matInput
+                            placeholder="Enter Mother's occupation" name="motherOccupation" required
+                            formControlName="motherOccupation" type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Mother's occupation is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Father's work Organization</mat-label>
+                        <input  matInput
+                            placeholder="Enter father's work organization" name="fatherOrganization"
+                            formControlName="fatherOrganization" type="text" >
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Mother's work Organization</mat-label>
+                        <input  matInput
+                            placeholder="Enter mother's work organization" name="motherOrganization"
+                            formControlName="motherOrganization" type="text" >
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Annual Income</mat-label>
+                        <input  matInput
+                            placeholder="Enter Annual Income" name="annualIncome" required formControlName="annualIncome"
+                            type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Annual income is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>E-mail</mat-label>
+                        <input  matInput
+                            placeholder="Enter E-mail" name="email" required formControlName="email" type="text"
+                            >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            E-mail is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Father's mobile no</mat-label>
+                        <input   matInput
+                            placeholder="Enter Father's mobile no" name="fatherMobile"
+                            formControlName="fatherMobile" type="text" >
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Mother's mobile no</mat-label>
+                        <input   matInput
+                            placeholder="Enter Mother's mobile no" name="motherMobile"
+                            formControlName="motherMobile" type="text" >
+                    </mat-form-field>
+                </div>
+                <div fxLayout="column">
+                    <mat-card>
+                        <mat-card-header>
+                            <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                            <mat-card-title>
+                                Address
+                            </mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div fxLayout="row" fxLayout.xs="column">
+                                <mat-form-field  fxFlex="50">
+                                    <mat-label>Address Line 1</mat-label>
+                                    <input  matInput
+                                        placeholder="Enter Address Line 1" name="address1"
+                                        formControlName="address1" type="text" >
+                                </mat-form-field>
+                                <mat-form-field  fxFlex="50">
+                                    <mat-label>Address Line 2</mat-label>
+                                    <input  matInput
+                                        placeholder="Enter Address Line 2" name="address2"
+                                        formControlName="address2" type="text" >
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayout.xs="column">
+                                <mat-form-field  fxFlex="50">
+                                    <mat-label>City</mat-label>
+                                    <input  matInput
+                                        placeholder="Enter City" name="city"  formControlName="city" type="text"
+                                        >
+                                </mat-form-field>
+                                <mat-form-field  fxFlex="50">
+                                    <mat-label>State</mat-label>
+                                    <input   matInput
+                                        placeholder="Enter State" name="state" formControlName="state" type="text"
+                                        >
+                                </mat-form-field>
+                            </div>
+                            <div fxLayout="row" fxLayout.xs="column">
+                                <mat-form-field  fxFlex="50">
+                                    <mat-label>Country</mat-label>
+                                    <input  matInput
+                                        placeholder="Enter Country" name="country" formControlName="country"
+                                        type="text" >
+                                </mat-form-field>
+                                <mat-form-field  fxFlex="50">
+                                    <mat-label>Zipcode</mat-label>
+                                    <input  matInput
+                                        placeholder="Enter Zipcode" name="zipcode"  formControlName="zipcode"
+                                        type="text" >
+                                </mat-form-field>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <mat-card-header>
+                    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                    <mat-card-title>
+                        Student Details
+                    </mat-card-title>
+                </mat-card-header>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Student Name</mat-label>
+                        <input  matInput
+                            placeholder="Enter Sstudent's Name" name="studentName" required formControlName="studentName"
+                            type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Student name is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <!-- <mat-form-field  fxFlex="50"> -->
+                    <mat-radio-group fxFlex="50" matInput formControlName="gender" (emitIsValdID)="idValidator($event)" aria-label="Select Gender">
+                        <mat-radio-button value="1" >Male</mat-radio-button>
+                        <mat-radio-button value="2">Female</mat-radio-button>
+                      </mat-radio-group>
+                  <!-- </mat-form-field> -->
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Date of Birth</mat-label>
+                        <!-- <input  matInput
+                        placeholder="Enter Date of Birth" name="dob" required
+                        formControlName="dob" type="text" >
+                    <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                        Date of Birth is <strong>required</strong>
+                    </mat-error> -->
+                        <input class="color" required [max]="tomorrow" formControlName="dob" placeholder="Enter Date Of Birth" matInput
+                            [matDatepicker]="picker">
+                        <!-- STYLE="color: #FFFFFF; background-color: #FFFFFF;" -->
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker class="color" #picker></mat-datepicker>
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Date of Birth is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Standard</mat-label>
+                        <input  matInput
+                            placeholder="Enter Standard" name="standard" required formControlName="standard" type="text"
+                            >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Standard is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Enter Previous year curriculum %</mat-label>
+                        <input  matInput
+                            placeholder="Enter Previous year curriculum %" name="prevCurriculum" required
+                            formControlName="prevCurriculum" type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Previous year curriculum is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Emergency contact person</mat-label>
+                        <input  matInput
+                            placeholder="Enter Emergency contact person" name="emergencyPer" required
+                            formControlName="emergencyPer" type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Emergency contact person is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayout.xs="column">
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Relationship of Emergency Contact Person</mat-label>
+                        <input  matInput
+                            placeholder="Enter Relationship of Emergency Contact Person" name="emerContact"
+                            formControlName="emerContact" type="text" >
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Emergency contact Number</mat-label>
+                        <input  matInput
+                            placeholder="Enter Emergency contact number" name="emergencyContct" required
+                            formControlName="emergencyContct" type="text" >
+                        <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                            Emergency contact number is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </form>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="center">
+            <button (click)="register()" mat-raised-button color="primary">
+                Register
+            </button>
+            <button (click)="resetForm()" mat-raised-button color="warn">
+                Cancel
+            </button>
+            <button (click)="resetForm()" mat-raised-button color="warn">
+                Reset
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>

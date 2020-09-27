@@ -1,0 +1,38 @@
+<div *ngIf="data.action=='StudentInfo'">
+  <mat-dialog-content class="mat-typography">
+  <p *ngIf="!parents">Sent notification to admin. Do you want to inform parents too?</p>
+  <p *ngIf="parents">Sent notification to parents</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button *ngIf="!parents" (click)="sendToAdmin()">Ok</button>
+</mat-dialog-actions>
+</div>
+<div *ngIf="data.action=='Payment'">
+  <mat-dialog-content class="mat-typography">
+    <p >You have successfully registered.</p>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Ok</button>
+  </mat-dialog-actions>
+</div>
+<div *ngIf="data.action=='pendingPermission'" >
+  <mat-dialog-content class="mat-typography">
+    <p *ngIf="data.status=='Approved'">The request number {{data.requestId}} is approved.</p>
+    <p *ngIf="data.status=='Rejected'">The request number {{data.requestId}} is rejected.</p>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Ok</button>
+  </mat-dialog-actions>
+</div>
+<div *ngIf="data.action=='calendar'" >
+  <mat-dialog-content class="mat-typography">
+    <p >Events are synced with google or outlook calendar.</p>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Ok</button>
+  </mat-dialog-actions>
+</div>
