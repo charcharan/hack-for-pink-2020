@@ -1,0 +1,30 @@
+<div ngClass.gt-sm="container-timeline" ngClass.lt-lg="container-timeline-mobile">
+  <h4><b>Timeline of Kid</b></h4>  
+  <div fxLayoutAlign="center center">
+    <mat-form-field appearance="fill">
+      <input class="color" [(ngModel)]="dateTime" [max]="tomorrow" placeholder="Search by date" matInput (dateInput)="dateChange($event)" [matDatepicker]="picker" >
+      
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker class="color" #picker></mat-datepicker>
+    </mat-form-field>
+  </div>       
+  <mgl-timeline [toggle]="toggle" [alternate]="true" [side]="side">
+    <mgl-timeline-entry *ngFor="let entry of entries; let i = index;" (expand)="onExpandEntry($event, i)">
+      <mgl-timeline-entry-header (click)="onHeaderClick($event)">
+        <div>{{entry.header}}</div>
+      </mgl-timeline-entry-header>
+      <mgl-timeline-entry-content [expandAnimationTiming]="contentAnimation ? '200ms ease' : '0ms'" [collapseAnimationTiming]="contentAnimation ? '100ms ease' : '0ms'">
+        <div>
+          <div>{{entry.content}}</div>                      
+        </div>
+      </mgl-timeline-entry-content>
+      <mgl-timeline-entry-dot [class]="color ? 'primary' : 'accent'" 
+                              [size]="size"
+                              (click)="onDotClick($event)"
+                              [expandAnimationTiming]="dotAnimation ? '200ms ease' : '0ms'"
+                              [collapseAnimationTiming]="dotAnimation ? '100ms ease' : '0ms'"
+                              ></mgl-timeline-entry-dot>
+      <mgl-timeline-entry-side>{{entry.min | date:'short'}}</mgl-timeline-entry-side>
+    </mgl-timeline-entry>
+  </mgl-timeline>
+</div>

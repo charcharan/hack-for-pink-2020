@@ -5,6 +5,7 @@ import { StudentRegistrationComponent } from '../app/student-registration/studen
 import { AdminHomeComponent } from '../app/admin-home/admin-home.component';
 import { DoctorComponent } from '../app/doctor/doctor.component';
 import { WarriorComponent } from '../app/warrior/warrior.component';
+import { TimelineViewComponent } from '../app/timeline-view/timeline-view.component';
 const routes: Routes = [
   {
     path: '',
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path : 'warrior',
     component : WarriorComponent
+  },
+  {
+    path : 'timeLine',
+    component : TimelineViewComponent
   }
   
 ];

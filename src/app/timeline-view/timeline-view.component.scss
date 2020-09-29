@@ -1,0 +1,23 @@
+mgl-timeline mgl-timeline-entry mgl-timeline-entry-dot.accent {
+    background-color: #ff4081;
+  }
+  mgl-timeline-entry-side {
+    color: white;
+  }
+
+.container-timeline{
+  width: 700px;
+  
+    padding: 2px 16px;
+    border-radius: 36px;
+    background: -webkit-gradient(linear,left top,left bottom,from(#711b86),to(#00057a));
+    animation: 1s ease-in-out slideup,1.5s ease-in-out fadein;
+}
+.container-timeline-mobile{
+  width: 300px;
+  
+    padding: 2px 16px;
+    border-radius: 5px;
+    background: -webkit-gradient(linear,left top,left bottom,from(#711b86),to(#00057a));
+    animation: 1s ease-in-out slideup,1.5s ease-in-out fadein;
+}

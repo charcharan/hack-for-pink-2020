@@ -30,11 +30,12 @@ import { DatePipe } from  '@angular/common';
 import { FullCalendarModule } from '@fullcalendar/angular'; 
 import { DoctorComponent } from '../app/doctor/doctor.component';
 import { WarriorComponent } from '../app/warrior/warrior.component';
+import { TimelineViewComponent } from '../app/timeline-view/timeline-view.component';
 
 @NgModule({
   declarations: [AppComponent, LoginComponentComponent,StudentRegistrationComponent,
     AdminHomeComponent, SignUpSuccessDialogComponent,DialogOverviewComponent,
-    RegistrationSuccessDialogComponent,DoctorComponent,WarriorComponent],
+    RegistrationSuccessDialogComponent,DoctorComponent,WarriorComponent,TimelineViewComponent],
     
   imports: [
     BrowserModule,
