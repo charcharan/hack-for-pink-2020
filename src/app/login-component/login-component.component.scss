@@ -12,8 +12,7 @@ Weather Card Styling
     padding: 1rem;
     margin: 2rem;
     width: 77rem;
-    height: 32rem;
-    cursor: pointer;
+    height: 35rem;
     background-color: white;
     border-radius: 1.75rem;
     animation: slideup 1s ease-in-out, fadein 1.25s ease-in-out 0ms 1;
@@ -23,6 +22,10 @@ Weather Card Styling
       padding-right: 4rem;
       padding-bottom: 8rem;
     }
+  }
+
+  img{
+    cursor: pointer;
   }
   
   .weather__card-add {
@@ -158,7 +161,7 @@ Weather Card Styling
   .quickLogin{
     background-color: white;
     border-radius: 1.75rem;
-    height: 25rem;
+    height: 27rem;
     border: ridge;
     border-color: #5de3e0;
   }
@@ -272,3 +275,20 @@ Weather Card Styling
     background-color: #dd4b39;
     color: white;
   }
+
+  .avatar {     
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;        
+}
+
+.avatar:focus {     
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: 5px solid red;
+  border-radius: 50%;
+  cursor:pointer;
+  overflow: hidden;        
+}

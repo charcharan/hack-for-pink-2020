@@ -33,6 +33,16 @@ export class LoginComponentComponent implements OnInit {
   subscribe:Subscription;
   invalidLogin:boolean = false;
   errorMsg:string;
+  emailGrav = '';
+  fallbacks = ['identicon', 'monsterid', 'retro', 'robohash', 'wavatar'];
+  avatar:string;
+  styleObject = {
+    borderWidth: '2px',
+    borderColor: 'green',
+    borderStyle: 'dashed',
+    width: '150px',
+    borderRadius: '20%'
+  };
    types:any=[{"value":1,"viewValue":"Doctor"},
   {"value":2,"viewValue":"Warrior"}];
   ngOnInit() {
@@ -47,6 +57,7 @@ export class LoginComponentComponent implements OnInit {
       firstName: ['', Validators.required], 
       lastName: ['', Validators.required],      
       emailId: ['', Validators.required], 
+      username: ['', Validators.required], 
         password: ['', [Validators.required]],
         confirmPassword: ['', [Validators.required]],
     }, {validator: this.passwordConfirming});   
@@ -68,51 +79,52 @@ export class LoginComponentComponent implements OnInit {
   }
 
   runTimer(){
-    const myNumber = interval(1000);
+    const myNumber = interval(20000);
     let msg:string;
      this.subscribe = myNumber.subscribe((number:number) => { 
-      this.http.get(environment.nodeNotifUrl+"/getNotification", {responseType: 'json'}).subscribe(s => {
-        if(s && s["notification"] && s["notification"][0] !== "0"){
-        this.notify.getNotification(s["notification"]).subscribe(res => {
-          if(res["notification"].length > 0){
-            if(this.loginService.getloginType() === 'parent'){
-              if(s["notification"] == "9" || s["notification"] == "3"){
-                msg="Get Ready to Board";
-                this.toastr.success(msg,res["notification"]);     
-                 this.setDefaultNotif(); 
-              } else if(s["notification"] == "10"){
-                msg="Your Kid has Reached Safely!";
-                this.toastr.success(msg,res["notification"]);     
-                this.setDefaultNotif(); 
-              } else if(s["notification"] == "12"){
-                msg="Click here to get the details";
-                // this.toastr.success(msg,res["notification"]); 
-                const toast  = this.toastr.warning(msg,res["notification"]);
-                toast.onHidden.subscribe(a=> {
-                  this.goToAdmin();
-                })
-                // this.toastr.toasts.re
-                this.setDefaultNotif(); 
-              } 
-              else {
-                msg = "Success";
-              }
+      this.toastr.warning("A Gentle Reminder to Self Assess","Dear warrior,"); 
+      // this.http.get(environment.nodeNotifUrl+"/getNotification", {responseType: 'json'}).subscribe(s => {
+    //     if(s && s["notification"] && s["notification"][0] !== "0"){
+    //     this.notify.getNotification(s["notification"]).subscribe(res => {
+    //       if(res["notification"].length > 0){
+    //         if(this.loginService.getloginType() === 'parent'){
+    //           if(s["notification"] == "9" || s["notification"] == "3"){
+    //             msg="Get Ready to Board";
+    //             this.toastr.success(msg,res["notification"]);     
+    //              this.setDefaultNotif(); 
+    //           } else if(s["notification"] == "10"){
+    //             msg="Your Kid has Reached Safely!";
+    //             this.toastr.success(msg,res["notification"]);     
+    //             this.setDefaultNotif(); 
+    //           } else if(s["notification"] == "12"){
+    //             msg="Click here to get the details";
+    //             // this.toastr.success(msg,res["notification"]); 
+    //             const toast  = this.toastr.warning(msg,res["notification"]);
+    //             toast.onHidden.subscribe(a=> {
+    //               this.goToAdmin();
+    //             })
+    //             // this.toastr.toasts.re
+    //             this.setDefaultNotif(); 
+    //           } 
+    //           else {
+    //             msg = "Success";
+    //           }
                 
-            } else if(this.loginService.getloginType() === 'admin'){
-              if(s["notification"] == "5"){
-                msg="Click here to get the details";
-                // this.toastr.success(msg,res["notification"]); 
-                const toast  = this.toastr.warning(msg,res["notification"]);
-                toast.onHidden.subscribe(a=> {
-                  this.goToAdmin();
-                })
-                // this.toastr.toasts.re
-                this.setDefaultNotif(); 
-              }
-            } 
-          }
-        })        
-    }})	
+    //         } else if(this.loginService.getloginType() === 'admin'){
+    //           if(s["notification"] == "5"){
+    //             msg="Click here to get the details";
+    //             // this.toastr.success(msg,res["notification"]); 
+    //             const toast  = this.toastr.warning(msg,res["notification"]);
+    //             toast.onHidden.subscribe(a=> {
+    //               this.goToAdmin();
+    //             })
+    //             // this.toastr.toasts.re
+    //             this.setDefaultNotif(); 
+    //           }
+    //         } 
+    //       }
+    //     })        
+    // }})	
      });
       
   }
@@ -155,6 +167,7 @@ export class LoginComponentComponent implements OnInit {
       data : '',
       userType: this.loginForm.get('password').value === 'doctor123' ? 'doctor' : 'warrior'
     };
+    this.runTimer();
     this.success(res);
     // if(this.studentLogin){
     //   this.loginService.searchStudent(this.loginForm.get('userName').value).subscribe(s=>{
@@ -256,24 +269,35 @@ export class LoginComponentComponent implements OnInit {
   }
   
   doSignUp(){
-    if(this.signUpForm.valid){
-      localStorage.setItem('userEmail', this.signUpForm.get('emailId').value);
-      localStorage.setItem('userPwd', this.signUpForm.get('password').value);
-      this.loginService.doRegister(this.signUpForm).subscribe(res => {
-       if(res.message === "Inserted"){
-            const dialogRef = this.dialog.open(SignUpSuccessDialogComponent);
-            this.signUpSuccess = true;
-            dialogRef.afterClosed().subscribe(result => {
-              this.login = true;
-              this.signUp = false;
-              this.signUpForm.reset();
-              this.selectedTab  = -1;
-              const tabCount = 2;
-              this.selectedTab = (this.selectedTab + 1) % tabCount;
-            });
-         }
-      });      
-    }		
+    let res = {};
+    res =  {
+      code : 200,
+      message : "Login Successful",
+      data : '',
+      userType: 'warrior'
+    };
+    this.loginService.avatar = this.avatar;
+    this.loginService.emailId = this.emailGrav;
+    this.loginService.userName = this.signUpForm.get('username').value;
+    this.success(res);
+    // if(this.signUpForm.valid){
+    //   localStorage.setItem('userEmail', this.signUpForm.get('emailId').value);
+    //   localStorage.setItem('userPwd', this.signUpForm.get('password').value);
+    //   this.loginService.doRegister(this.signUpForm).subscribe(res => {
+    //    if(res.message === "Inserted"){
+    //         const dialogRef = this.dialog.open(SignUpSuccessDialogComponent);
+    //         this.signUpSuccess = true;
+    //         dialogRef.afterClosed().subscribe(result => {
+    //           this.login = true;
+    //           this.signUp = false;
+    //           this.signUpForm.reset();
+    //           this.selectedTab  = -1;
+    //           const tabCount = 2;
+    //           this.selectedTab = (this.selectedTab + 1) % tabCount;
+    //         });
+    //      }
+    //   });      
+    // }		
 	}
 
 	// Login success function

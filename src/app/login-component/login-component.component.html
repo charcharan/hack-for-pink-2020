@@ -76,7 +76,7 @@
             <div fxLayout="column">
              
               <div fxFlex="50" style="margin-top: 2vh;">
-                <form [formGroup]="signUpForm" (ngSubmit)="doSignUp()">
+                <form [formGroup]="signUpForm">
                   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
                     <div fxFlex="50">
                       <mat-form-field>
@@ -92,14 +92,14 @@
                   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
                     <div fxFlex="50">
                       <mat-form-field>
-                        <input matInput  type="email" formControlName="emailId" placeholder="Email Id">
+                        <input matInput  type="email" formControlName="emailId" [(ngModel)]="emailGrav" placeholder="Email Id">
                       </mat-form-field>
                     </div>
                     <div fxFlex="50">
                       <mat-form-field>
                         <input matInput  type="password" formControlName="password" placeholder="Password">
                       </mat-form-field>
-                    </div>
+                    </div>                   
                   </div>
                   <div fxLayout="row"  fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
                     <div fxFlex="50">
@@ -113,11 +113,25 @@
                         </mat-error>
                       </mat-form-field>                   
                     </div>
-                    <div fxFlex="50" fxLayoutAlign="space-between end">
-                      <button mat-raised-button color="primary" class="button_outline" type="submit">SignUp</button>&nbsp;&nbsp;
-                      <button (click)="resetForm(2)" mat-raised-button class="button_dark">Reset</button>
+                    <div fxFlex="50">
+                      <mat-form-field>
+                        <input matInput  type="username" formControlName="username" placeholder="Username">
+                      </mat-form-field>
+                    </div>                     
+                  </div> 
+                  <div fxLayout="row"  fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
+                    <div fxFlex="100">
+                      <button *ngFor="let f of fallbacks" (click)="getAvatar(f)" class="avatar">
+                        <img ngxGravatar [email]="emailGrav" size="50" [fallback]="f" borderColor="rgba(0, 0, 0, 0.2)" />
+                      </button>
                     </div>
                   </div>
+                  <div fxLayout="row"  fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
+                    <div fxFlex="100" fxLayoutAlign="space-between end">
+                      <button mat-raised-button color="primary" type="submit" class="button_outline" (click)="doSignUp()">SignUp</button>&nbsp;&nbsp;
+                      <button (click)="resetForm(2)" mat-raised-button class="button_dark">Reset</button>
+                    </div>
+                  </div>                
                 </form>
               </div>   
             </div>      

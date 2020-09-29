@@ -31,6 +31,15 @@ import { FullCalendarModule } from '@fullcalendar/angular';
 import { DoctorComponent } from '../app/doctor/doctor.component';
 import { WarriorComponent } from '../app/warrior/warrior.component';
 import { TimelineViewComponent } from '../app/timeline-view/timeline-view.component';
+import { GravatarModule, GravatarConfig, FALLBACK, RATING } from 'ngx-gravatar';
+
+const gravatarConfig: GravatarConfig = {
+  // fallback: FALLBACK.robohash,
+  rating: RATING.g
+  // hasBorder: true,
+  // borderColor: "rgba(255, 0, 0, 0.1)",
+  // backgroundColor: "rgba(255, 0, 0, 0.1)",
+};
 
 @NgModule({
   declarations: [AppComponent, LoginComponentComponent,StudentRegistrationComponent,
@@ -54,6 +63,7 @@ import { TimelineViewComponent } from '../app/timeline-view/timeline-view.compon
       closeButton: true     
     }),  
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    GravatarModule.forRoot(gravatarConfig),
     AngularFireStorageModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
