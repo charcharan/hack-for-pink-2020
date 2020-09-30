@@ -36,3 +36,21 @@
     <button mat-button mat-dialog-close>Ok</button>
   </mat-dialog-actions>
 </div>
+<div *ngIf="data.action=='ReportScanning'">
+  <mat-dialog-content class="mat-typography">   
+    <div id="app">
+      <div><video #video id="video" width="640" height="480" autoplay></video></div>
+      <div><button id="snap" (click)="capture()">Snap Photo</button></div>
+      <canvas #canvas id="canvas" width="640" height="480"></canvas>
+      <ul>
+          <li *ngFor="let c of captures">
+              <img src="{{ c }}" height="50" />
+          </li>
+      </ul>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button  (click)="saveReport()">Ok</button>
+</mat-dialog-actions>
+</div>

@@ -12,7 +12,7 @@
 
     </section>
     <section class="weather__card"          
-        [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}">
+        [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openReportScanning()">
           <span class="city-name__text">Report Scanning</span>
           <div class="circle">          
             10

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
 
 @Component({
   selector: 'app-warrior',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarriorComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openReportScanning(){
+    const dialogRef = this.dialog.open(DialogOverviewComponent,{
+      data:{
+        action:'ReportScanning'
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+     
+    });
   }
 
 }
