@@ -13,6 +13,7 @@ export class MakeAWishComponent implements OnInit {
   dateTime =  new Date((new Date().getTime()));
   tomorrow = new Date();
   makeAwishForm: FormGroup;
+  anonymous:boolean = false;
   public isValidIdInput: boolean;
   constructor(public router: Router,private formBuilder: FormBuilder,public dialog:MatDialog) { 
     this.tomorrow.setDate(this.tomorrow.getDate());
@@ -33,8 +34,16 @@ export class MakeAWishComponent implements OnInit {
       zipcode: ['', Validators.required],
       guardianName: ['', Validators.required],      
       dob: ['', Validators.required],
-      wish: ['', Validators.required]  
+      wish: ['', Validators.required],
+      anonymous: ['', Validators.required]  
     });
+  }
+  resetForm(): void {
+    this.makeAwishForm.reset();
+  }
+
+  cancelForm():void {
+    this.router.navigate(['/warrior']);
   }
 
 }

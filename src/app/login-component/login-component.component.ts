@@ -79,7 +79,7 @@ export class LoginComponentComponent implements OnInit {
   }
 
   runTimer(){
-    const myNumber = interval(30000);
+    const myNumber = interval(90000);
     let msg:string;
      this.subscribe = myNumber.subscribe((number:number) => { 
       this.toastr.warning("A Gentle Reminder to Self Assess","Dear warrior,"); 

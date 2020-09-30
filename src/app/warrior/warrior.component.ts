@@ -28,4 +28,8 @@ export class WarriorComponent implements OnInit {
   openTimelineView() {
     this.route.navigate(['/timeLine'])
   }
+
+  gotToMakeAWish(){
+    this.route.navigate(['/makeAwish'])
+  }
 }
