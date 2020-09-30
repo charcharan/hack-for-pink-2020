@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sis": {
+    "hfp": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sis",
+            "outputPath": "dist/hfp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sis:build"
+            "browserTarget": "hfp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sis:build:production"
+              "browserTarget": "hfp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sis:build"
+            "browserTarget": "hfp:build"
           }
         },
         "test": {
@@ -112,7 +112,7 @@
         }
       }
     },
-    "sis-e2e": {
+    "hfp-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -121,11 +121,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "sis:serve"
+            "devServerTarget": "hfp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sis:serve:production"
+              "devServerTarget": "hfp:serve:production"
             }
           }
         },
@@ -141,5 +141,5 @@
       }
     }
   },
-  "defaultProject": "sis"
+  "defaultProject": "hfp"
 }

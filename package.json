@@ -1,11 +1,12 @@
 {
-  "name": "sis",
+  "name": "hfp",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "start3": "ng serve --port 4203",
     "build": "ng build",
+    "build-prod": "ng b --prod --aot=false --build-optimizer=false",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

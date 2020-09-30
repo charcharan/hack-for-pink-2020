@@ -130,9 +130,9 @@ export class LoginComponentComponent implements OnInit {
   }
 
   setDefaultNotif(){
-      this.http.get(environment.nodeNotifUrl+"/setNotification/0", {responseType: 'json'}).subscribe(s => {
+      // this.http.get(environment.nodeNotifUrl+"/setNotification/0", {responseType: 'json'}).subscribe(s => {
 
-      })
+      // })
   }
 
   passwordConfirming(c: AbstractControl): { invalid: boolean } {

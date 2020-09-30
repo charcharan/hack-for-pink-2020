@@ -21,8 +21,8 @@ export class DialogOverviewComponent implements OnInit {
 
   sendToAdmin(){
     this.parents = true;
-    this.http.get(environment.nodeNotifUrl+"/setNotification/12", {responseType: 'json'}).subscribe(s => {
+    // this.http.get(environment.nodeNotifUrl+"/setNotification/12", {responseType: 'json'}).subscribe(s => {
        
-    })
+    // })
   }
 }
