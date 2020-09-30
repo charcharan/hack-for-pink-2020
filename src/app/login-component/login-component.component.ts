@@ -79,7 +79,7 @@ export class LoginComponentComponent implements OnInit {
   }
 
   runTimer(){
-    const myNumber = interval(20000);
+    const myNumber = interval(30000);
     let msg:string;
      this.subscribe = myNumber.subscribe((number:number) => { 
       this.toastr.warning("A Gentle Reminder to Self Assess","Dear warrior,"); 
@@ -167,7 +167,7 @@ export class LoginComponentComponent implements OnInit {
       data : '',
       userType: this.loginForm.get('password').value === 'doctor123' ? 'doctor' : 'warrior'
     };
-    this.runTimer();
+      
     this.success(res);
     // if(this.studentLogin){
     //   this.loginService.searchStudent(this.loginForm.get('userName').value).subscribe(s=>{
@@ -309,6 +309,7 @@ export class LoginComponentComponent implements OnInit {
 			this.router.navigate(['/doctor']);
 		}else if(data.code == 200 && data.userType === "warrior"){
       this.loginService.userType = 'warrior';
+      this.runTimer();
 			this.router.navigate(['/warrior']);
 		}	else if(data.code == 200 && data.userType === "driver"){     
       this.router.navigate(['/drivHome']);
@@ -365,5 +366,10 @@ export class LoginComponentComponent implements OnInit {
       console.log("doGoogleLogin -> res", res)
       this.success(res);
     });
+  }
+
+
+  getAvatar(f:any) {
+    this.avatar = f;
   }
 }

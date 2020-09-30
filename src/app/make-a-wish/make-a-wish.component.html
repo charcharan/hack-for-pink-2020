@@ -1,0 +1,140 @@
+<div>
+  <mat-card class="card marginTop">
+      <mat-card-header>
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>
+              Make A Wish Form
+          </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <form [formGroup]="makeAwishForm">                
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">                 
+                  <mat-form-field  fxFlex="50" fxLayoutGap="2vw">
+                      <mat-label>First Name</mat-label>
+                      <input  matInput
+                          placeholder="Enter First Name" id="firstName" formControlName="firstName"
+                          type="text" >
+                      <mat-error *ngIf="makeAwishForm.hasError('required')">
+                          First name is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+                  <mat-form-field  fxFlex="50">
+                      <mat-label>Last Name</mat-label>
+                      <input  matInput
+                          placeholder="Enter Last Name" name="lastName" required formControlName="lastName"
+                          type="text" >
+                      <mat-error *ngIf="makeAwishForm.hasError('required')">
+                          Last name is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>              
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">       
+                <mat-form-field  fxFlex="50">
+                  <mat-label>Date of Birth</mat-label>
+                  <!-- <input  matInput
+                  placeholder="Enter Date of Birth" name="dob" required
+                  formControlName="dob" type="text" >
+              <mat-error *ngIf="studentRegistrationForm.hasError('required')">
+                  Date of Birth is <strong>required</strong>
+              </mat-error> -->
+                  <input class="color" required [max]="tomorrow" formControlName="dob" placeholder="Enter Date Of Birth" matInput
+                      [matDatepicker]="picker">
+                  <!-- STYLE="color: #FFFFFF; background-color: #FFFFFF;" -->
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker class="color" #picker></mat-datepicker>
+                  <mat-error *ngIf="makeAwishForm.hasError('required')">
+                      Date of Birth is <strong>required</strong>
+                  </mat-error>
+              </mat-form-field>           
+                  <mat-form-field  fxFlex="100">
+                      <mat-label>E-mail</mat-label>
+                      <input  matInput
+                          placeholder="Enter E-mail" name="email" required formControlName="email" type="text"
+                          >
+                      <mat-error *ngIf="makeAwishForm.hasError('required')">
+                          E-mail is <strong>required</strong>
+                      </mat-error>
+                  </mat-form-field>
+              </div>
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">
+                  <mat-form-field  fxFlex="50">
+                      <mat-label>Guardian Name</mat-label>
+                      <input   matInput
+                          placeholder="Enter Guardian's Name" name="guardianName"
+                          formControlName="guardianName" type="text" >
+                  </mat-form-field>
+                  <mat-form-field  fxFlex="50">
+                      <mat-label>Guardian's mobile no</mat-label>
+                      <input   matInput
+                          placeholder="Enter Guardian's mobile no" name="guradianMobile"
+                          formControlName="guradianMobile" type="text" >
+                  </mat-form-field>
+              </div>
+              <div fxLayout="column">
+                          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">
+                              <mat-form-field  fxFlex="50">
+                                  <mat-label>Address Line 1</mat-label>
+                                  <input  matInput
+                                      placeholder="Enter Address Line 1" name="address1"
+                                      formControlName="address1" type="text" >
+                              </mat-form-field>
+                              <mat-form-field  fxFlex="50">
+                                  <mat-label>Address Line 2</mat-label>
+                                  <input  matInput
+                                      placeholder="Enter Address Line 2" name="address2"
+                                      formControlName="address2" type="text" >
+                              </mat-form-field>
+                          </div>
+                          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">
+                              <mat-form-field  fxFlex="50">
+                                  <mat-label>City</mat-label>
+                                  <input  matInput
+                                      placeholder="Enter City" name="city"  formControlName="city" type="text"
+                                      >
+                              </mat-form-field>
+                              <mat-form-field  fxFlex="50">
+                                  <mat-label>State</mat-label>
+                                  <input   matInput
+                                      placeholder="Enter State" name="state" formControlName="state" type="text"
+                                      >
+                              </mat-form-field>
+                          </div>
+                          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">
+                              <mat-form-field  fxFlex="50">
+                                  <mat-label>Country</mat-label>
+                                  <input  matInput
+                                      placeholder="Enter Country" name="country" formControlName="country"
+                                      type="text" >
+                              </mat-form-field>
+                              <mat-form-field  fxFlex="50">
+                                  <mat-label>Zipcode</mat-label>
+                                  <input  matInput
+                                      placeholder="Enter Zipcode" name="zipcode"  formControlName="zipcode"
+                                      type="text" >
+                              </mat-form-field>
+                          </div>                     
+              </div>
+                      
+              <div fxLayout="row" fxLayout.xs="column">
+                <mat-form-field class="example-full-width" fxFlex="100">
+                  <mat-label>Make A Wish</mat-label>
+                  <textarea matInput #wish maxlength="300" placeholder="I wish I can..." name="wish" formControlName="wish" style="height:70px;"></textarea>
+                  <mat-hint align="end">{{wish.value.length}} / 300</mat-hint>
+                </mat-form-field>
+              </div>              
+              
+          </form>
+      </mat-card-content>
+      <mat-card-actions fxLayoutAlign="center">
+          <button (click)="register()" mat-raised-button color="primary" class="button_outline">
+              Submit
+          </button>
+          <button (click)="resetForm()" mat-raised-button  class="button_dark">
+              Cancel
+          </button>
+          <button (click)="resetForm()" mat-raised-button  class="button_dark">
+              Reset
+          </button>
+      </mat-card-actions>
+  </mat-card>
+</div>

@@ -6,6 +6,7 @@ import { AdminHomeComponent } from '../app/admin-home/admin-home.component';
 import { DoctorComponent } from '../app/doctor/doctor.component';
 import { WarriorComponent } from '../app/warrior/warrior.component';
 import { TimelineViewComponent } from '../app/timeline-view/timeline-view.component';
+import { MakeAWishComponent } from '../app/make-a-wish/make-a-wish.component';
 const routes: Routes = [
   {
     path: '',
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path : 'timeLine',
     component : TimelineViewComponent
+  },
+  {
+    path : 'makeAwish',
+    component : MakeAWishComponent
   }
   
 ];
