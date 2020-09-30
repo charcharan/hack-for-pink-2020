@@ -1,0 +1,51 @@
+.container-timeline{
+    width: 700px;
+      margin: 4vw;
+      padding: 2px 16px;
+      border-radius: 36px;
+      background: -webkit-gradient(linear,left top,left bottom,from(#e75e97),to(#feb0e4));
+      animation: 1s ease-in-out slideup,1.5s ease-in-out fadein;
+  }
+  .container-timeline-mobile{
+    width: 300px;
+    
+      padding: 2px 16px;
+      border-radius: 5px;
+      background: -webkit-gradient(linear,left top,left bottom,from(#e75e97),to(#feb0e4));
+      animation: 1s ease-in-out slideup,1.5s ease-in-out fadein;
+  }
+  .login-logo{
+    width: 50px;
+    height: 40px;
+  }
+
+  .tp-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+ }
+
+ .tp-margin {
+  margin: 0 10px;
+}
+
+.butMob{
+  @media only screen and (max-width: 600px) {
+    margin-bottom: 4vh;
+  }
+}
+
+.butMob{
+  height: 3vw;
+  width: 8vw;
+}
+
+.marginTop {
+  margin-top: 30px;
+}
+
+.card {
+  width: 40vw!important;
+  max-width: 75vw!important;
+}

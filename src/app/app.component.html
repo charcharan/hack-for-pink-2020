@@ -21,7 +21,7 @@
     <section class="menu-body">
       <ul class="menu-links" [ngClass]="{'menu-links-dark': darkModeActive}" (click)="toggleMenu()">
         <!-- Doctor links -->
-        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/studReg" routerLinkActive="link-active">Image Sharing</li>
+        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/imageSharing" routerLinkActive="link-active">Image Sharing</li>
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/perReq" routerLinkActive="link-active">Counseling/Motivational Support</li>
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Raising Funds</li>
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Notifications</li>
@@ -32,7 +32,7 @@
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/makeAwish" routerLinkActive="link-active" >Make a Wish</li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Notifications</li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Near by centers details</li>
-        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Image Sharing</li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/imageSharing" routerLinkActive="link-active" >Image Sharing</li>
         <li (click)="logout()" class="menu-link">Logout</li>
       </ul>
     </section>

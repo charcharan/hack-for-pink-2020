@@ -1,0 +1,37 @@
+<div ngClass.gt-sm="container-timeline" ngClass.lt-lg="container-timeline-mobile">
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h2><b>Share Files</b></h2>
+    <div fxLayoutAlign="center center">
+      <mat-form-field>
+        <mat-select [(ngModel)]="selectedValue" name="loginTypes" (selectionChange)="userChange()">
+          <mat-option *ngFor="let user of (userType === 'doctor') ? warriors : doctors" [value]="user.id" >
+            {{user.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <mat-card fxFlex fxLayout="column" class="card marginTop" fxLayoutAlign="center center">
+      <mat-card-header fxFlex="10">
+          <mat-card-title>
+             Files to Share
+          </mat-card-title>
+      </mat-card-header>
+        <mat-card-content fxFlex="60" >
+          <!-- checkbox || file name
+          share Share all 
+          notification -->
+          <section *ngFor="let file of fileList"class = "tp-section">
+            <div  fxLayout="row" fxFlex >
+            <mat-checkbox fxFlex="50" class = "tp-margin" ></mat-checkbox>        
+            <span fxFlex="50">{{file}}</span>  
+          </div>  
+         </section> 
+        </mat-card-content>
+        <div fxFlex="30" fxLayout="row" fxLayoutGap="2vw">
+        <button mat-raised-button color="primary" type="submit" class="butMob button_outline" (click)="openNotification()" >Share</button>
+        <button mat-raised-button color="primary" type="submit" class="butMob button_outline" (click)="openNotification()" >Share All</button>
+        <button mat-raised-button *ngIf="userType === 'warrior'" color="primary" class="butMob button_outline">Upload File</button>
+      </div>
+     </mat-card>
+
+</div>

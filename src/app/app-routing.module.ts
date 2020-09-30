@@ -7,6 +7,7 @@ import { DoctorComponent } from '../app/doctor/doctor.component';
 import { WarriorComponent } from '../app/warrior/warrior.component';
 import { TimelineViewComponent } from '../app/timeline-view/timeline-view.component';
 import { MakeAWishComponent } from '../app/make-a-wish/make-a-wish.component';
+import { ImageSharingComponent } from '../app/image-sharing/image-sharing.component';
 const routes: Routes = [
   {
     path: '',
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path : 'makeAwish',
     component : MakeAWishComponent
+  },
+  {
+    path : 'imageSharing',
+    component : ImageSharingComponent
   }
   
 ];
