@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hfp": {
+    "flamingo": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hfp",
+            "outputPath": "dist/flamingo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "hfp:build"
+            "browserTarget": "flamingo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "hfp:build:production"
+              "browserTarget": "flamingo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hfp:build"
+            "browserTarget": "flamingo:build"
           }
         },
         "test": {
@@ -112,7 +112,7 @@
         }
       }
     },
-    "hfp-e2e": {
+    "flamingo-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -121,11 +121,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "hfp:serve"
+            "devServerTarget": "flamingo:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "hfp:serve:production"
+              "devServerTarget": "flamingo:serve:production"
             }
           }
         },
@@ -141,5 +141,5 @@
       }
     }
   },
-  "defaultProject": "hfp"
+  "defaultProject": "flamingo"
 }
