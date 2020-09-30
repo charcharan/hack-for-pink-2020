@@ -19,3 +19,26 @@ body { margin: 0; font-family: SegoeUI-Semibold,Segoe UI; }
     transition: background 300ms linear;
     background-image: linear-gradient(to top, #5ee7df 0%, #66a6ff 100%);
   }
+  .button_outline {
+    display: inline-block !important;
+    box-sizing: border-box !important;
+    border: 2px solid #e68ab9 !important;
+    color: #dc579b !important;
+    background-color :white !important;
+  }
+  .button_outline:hover {
+    color: black;
+    background-color: #f9d7e8 !important;
+  }
+
+  .button_dark {
+    display: inline-block !important;
+    box-sizing: border-box !important;
+    border: 2px solid #e62839 !important;
+    color: #e22319 !important;
+    background-color :white !important;
+  }
+  .button_dark:hover {
+    color: black;
+    background-color: #dab7b7 !important;
+  }

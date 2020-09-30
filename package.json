@@ -1,11 +1,12 @@
 {
-  "name": "sis",
+  "name": "hfp",
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "start3": "ng serve --port 4203",
     "build": "ng build",
+    "build-prod": "ng b --prod --aot=false --build-optimizer=false",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -38,6 +39,7 @@
     "core-js": "^2.5.4",
     "firebase": "^7.17.1",
     "hammerjs": "^2.0.8",
+    "ngx-gravatar": "^7.2.2",
     "ngx-toastr": "^10.2.0",
     "node-sass": "^4.14.1",
     "rxjs": "~6.3.3",

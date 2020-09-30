@@ -7,8 +7,11 @@
     <section class="menu-header" [ngClass]="{'menu-header-dark': darkModeActive}">
       <!-- <span class="greeting__text">Welcome Back</span> -->
       <div class="profile-image__container">
-        <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" alt="profile-image"
-             class="profile__image">
+        <!-- <img src="https://www.jamf.com/jamf-nation/img/default-avatars/generic-user-purple.png" alt="profile-image"
+             class="profile__image"> -->
+             <img ngxGravatar [email]="emailId" size="50" [fallback]="avatar" borderColor="rgba(0, 0, 0, 0.2)"  alt="profile-image"
+        class="profile__image" />
+        
       </div>
       <div class="account-details">
         <!-- <span class="name__text">{{userEmail}}</span> -->
@@ -17,14 +20,14 @@
     </section>
     <section class="menu-body">
       <ul class="menu-links" [ngClass]="{'menu-links-dark': darkModeActive}" (click)="toggleMenu()">
-        <!-- Parent links -->
+        <!-- Doctor links -->
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/studReg" routerLinkActive="link-active">Image Sharing</li>
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/perReq" routerLinkActive="link-active">Counseling/Motivational Support</li>
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Raising Funds</li>
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Notifications</li>
-        <!-- Admin links -->
-        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/search" routerLinkActive="link-active">Self Test Questionaire</li>
+        <!-- Warrior links -->
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/stir" routerLinkActive="link-active">Consulting with doctor</li>
+        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/timeLine" routerLinkActive="link-active" >Tap for your Graph</li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/pendingRequest" routerLinkActive="link-active">Report scanning </li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/trackBus" routerLinkActive="link-active" >Make a Wish</li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Notifications</li>

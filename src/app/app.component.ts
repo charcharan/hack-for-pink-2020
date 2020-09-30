@@ -19,6 +19,8 @@ export class AppComponent {
   showMenu = false;
   userType:string = "";
   userName: string="";
+  avatar:string;
+  emailId:string;
   constructor(
     @Inject('loading') public loader,
     private route: Router, private login : LoginService) {  
@@ -36,6 +38,8 @@ export class AppComponent {
   reload(){
     this.userType =  this.login.userType;
     this.userName = this.login.userName;
+    this.avatar = this.login.avatar;
+    this.emailId = this.login.emailId;
   }
   logout(){
     this.showMenu = false;

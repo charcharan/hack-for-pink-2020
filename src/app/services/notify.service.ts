@@ -8,11 +8,11 @@ import {environment} from '../../environments/environment';
 export class NotifyService {
 
   constructor(private http:HttpClient ) { }
- url:string =  environment.nodeNotifUrl+"/notify/notification/:id";
+//  url:string =  environment.nodeNotifUrl+"/notify/notification/:id";
 
  getNotification(id){
-  let url = this.url.replace(':id',id);
-  return this.http.get<any>(url, {responseType: 'json'});
+  // let url = this.url.replace(':id',id);
+  // return this.http.get<any>(url, {responseType: 'json'});
 }
 
 

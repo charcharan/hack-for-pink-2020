@@ -19,3 +19,6 @@ middleWare =  function(req,res,next){
 app.get('/', (req, res) => {
     res.send('I am running...');
 });
+app.get('/hfp', (req, res) => {
+    res.sendFile('/dist/index.html');
+});
