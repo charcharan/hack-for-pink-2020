@@ -48,10 +48,10 @@ export class AppComponent {
     this.route.navigate(['/']);
   }
   goToHome() {
-    if(this.userType === 'parent') {
-      this.route.navigate(['/parentHome']);
-    }else if(this.userType === 'admin'){
-      this.route.navigate(['/admHome']);
+    if(this.userType === 'doctor') {
+      this.route.navigate(['/doctor']);
+    }else if(this.userType === 'warrior'){
+      this.route.navigate(['/warrior']);
     }else if(this.userType === 'driver'){
       this.route.navigate(['/drivHome']);
     }else if(this.userType === 'staff'){

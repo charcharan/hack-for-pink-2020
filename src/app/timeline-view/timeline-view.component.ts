@@ -16,48 +16,26 @@ export class TimelineViewComponent implements OnInit {
   setEntries() {
     this.entries = [      
       {
-        header: 'Boarded school bus',
-        content: 'Tracking bus route to school',
-        time: "",
-        min: ""
+        header: 'Doctor Visit',
+        content: 'Update the task with initial doctor appointment date.',
+        time: "Sep 27 2020",
+        min: "",
+        img : 'assets/doctorIcon.png'
       },
       {
-        header: 'Entered school',
-        content: 'Entered school campus',
-        time: "",
-        min: ""
+        header: 'Biopsy',
+        content: 'Update the task with the actual biopsy date and the mutation type.',
+        time: "Sep 28 2020",
+        min: "",
+        img : 'assets/microscopeIcon.png'
       },
       {
-        header: 'Track attendance',
-        content: 'Biometric verification for student',
-        time: "",
-        min: ""
-      },
-      {
-        header: 'Classroom',
-        content: 'Student is attending class',
-        time: "",
-        min: ""
-      },
-      {
-        header: 'Lab',
-        content: 'Student is attending lab session',
-        time: "",
-        min: ""
-      },
-      {
-        header: 'Ground',
-        content: 'Student is playing in ground',
-        time: "",
-        min: ""
-      },
-      {
-        header: 'Back to home',
-        content: 'Student started from school, track the school bus',
-        time: "",
-        min: ""
-      }
-    
+        header: 'Treatment Mgmt',
+        content: 'Welcome to Belong Therapeutic journey navigator. This tool will simplify managing your tasks, ... Read more',
+        time: "Sep 30 2020",
+        min: "",
+        img : 'assets/notepad.png'
+      }    
     ];
   }
   onHeaderClick(event) {

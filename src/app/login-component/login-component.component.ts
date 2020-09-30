@@ -43,8 +43,8 @@ export class LoginComponentComponent implements OnInit {
     width: '150px',
     borderRadius: '20%'
   };
-   types:any=[{"value":1,"viewValue":"Doctor"},
-  {"value":2,"viewValue":"Warrior"}];
+   types:any=[{"value":1,"viewValue":"Warrior"},
+  {"value":2,"viewValue":"Doctor"}];
   ngOnInit() {
     this.selectedValue = 1;
     this.somePlaceholder = "Username";

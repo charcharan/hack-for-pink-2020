@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
-
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-warrior',
   templateUrl: './warrior.component.html',
@@ -9,9 +9,10 @@ import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.comp
 })
 export class WarriorComponent implements OnInit {
 
-  constructor(public dialog:MatDialog) { }
+  constructor(public dialog:MatDialog,private route : Router) { }
 
   ngOnInit() {
+    window.scroll(0,0);
   }
 
   openReportScanning(){
@@ -24,5 +25,7 @@ export class WarriorComponent implements OnInit {
      
     });
   }
-
+  openTimelineView() {
+    this.route.navigate(['/timeLine'])
+  }
 }

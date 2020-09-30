@@ -1,74 +1,54 @@
 <div fxLayout="column">
-  <div fxLayout.gt-md="row" fxLayout.lt-lg="column">
-      <section class="weather__card"          
-        [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openStudentDir()">
-          <span class="city-name__text">Consult With Doctor</span>
-          <div class="circle">          
-          24
-          </div>
-          <div class="temperature-text__container">
-          <span class="weather-condition__text">Search for Kids..</span>
-          </div>      
-
+  <div fxLayout="row">
+      <section ngClass.gt-md="weather__card"  ngClass.lt-md="weather__card__mobile"
+        [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openTimelineView()">         
+          <img src="assets/statistics_image.png" ngClass.gt-md="login-logo" ngClass.lt-md="login-logo-mobile" > 
     </section>
-    <section class="weather__card"          
-        [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openReportScanning()">
-          <span class="city-name__text">Report Scanning</span>
-          <div class="circle">          
-            10
-            </div>
-          <div class="temperature-text__container">
-          <span class="weather-condition__text">Add Daily Events</span>
-          </div>      
-
+    <section ngClass.gt-md="weather__card"  ngClass.lt-md="weather__card__mobile"         
+        [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openReportScanning()">         
+          <img src="assets/scanning_icon.png" ngClass.gt-md="login-logo" ngClass.lt-md="login-logo-mobile"> 
       </section>
-      <section class="weather__card"          
+      <section ngClass.gt-md="weather__card"  ngClass.lt-md="weather__card__mobile"          
               [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openPendingPermission()">
-        <span class="city-name__text">Make a Wish</span>
-        <div class="circle">          
-          02
-          </div>
-        <div class="temperature-text__container">
-          <span class="weather-condition__text">Leave request, Doctor Appointment</span>
-        </div>      
-
-      </section>    
+        <img src="assets/make_wish.jpg" ngClass.gt-md="login-logo" ngClass.lt-md="login-logo-mobile"> 
+      </section>   
+      
+      <section ngClass.gt-md="weather__card"  ngClass.lt-md="weather__card__mobile"          
+              [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openPendingPermission()">
+              <img src="assets/notification_icon.png" ngClass.gt-md="login-logo" ngClass.lt-md="login-logo-mobile">
+      </section> 
   </div>
-
-  <div fxLayout.gt-md="row" fxLayout.lt-lg="column">
-      <section class="weather__card"          
-              [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}">
-        <span class="city-name__text">Nearby Centre Detials</span>
-        <div class="circle">          
-          10
-          </div>
-        <div class="temperature-text__container">
-          <span class="weather-condition__text">Setup Admission Process</span>
-        </div>     
-
-      </section>
-
-      <section class="weather__card"          
-              [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}">
-        <span class="city-name__text">Secure Image Sharing</span>
-        <div class="circle">          
-          35
-          </div>
-        <div class="temperature-text__container">
-          <span class="weather-condition__text">School admission approvals</span>
+  <div fxLayout="column" fxLayoutAlign="center center" class="cls-feed">
+        <div>
+          <h3><b>My Feed</b></h3>
+        </div>
+        <div ngClass.gt-md="cls-feed-txt" ngClass.lt-md="cls-feed-txt-mobile">
+          Here you can read public conversations  that could match your personal interests.          
+        </div>  
+        <div ngClass.gt-md="cls-feed-txt" ngClass.lt-md="cls-feed-txt-mobile">         
+          The more accurately you fill your profile, the more relevant content you will recieve.
         </div>    
-
-      </section>
-      <section class="weather__card"          
-              [ngClass]="{'weather__card-dark': darkMode, 'weather__card-add': addMode}" (click)="openAnnouncement()">
-        <span class="city-name__text" >Announcements</span>
-        <div class="circle">          
-          06
-          </div>
-        <div class="temperature-text__container">
-          <span class="weather-condition__text">News Feed</span>
-        </div>    
-
-      </section>
-    </div>
+      <div >  
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Raja Sri 208</mat-card-title>
+            <mat-card-subtitle>Member</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="assets/blur_image.png" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+             Sir doctor says radiation is necessary. I want to know what is my condition & my case is metastatic or not.pet scan report...
+             Read more
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button color="primary">Follow</button>
+            <button mat-raised-button >Chat</button>
+            <button mat-raised-button style="background-color: #ff4081;color: white;">Hug</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+  </div>
+  
 </div>

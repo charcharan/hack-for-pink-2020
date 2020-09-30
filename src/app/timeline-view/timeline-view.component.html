@@ -1,17 +1,17 @@
 <div ngClass.gt-sm="container-timeline" ngClass.lt-lg="container-timeline-mobile">
-  <h4><b>Timeline of Kid</b></h4>  
   <div fxLayoutAlign="center center">
-    <mat-form-field appearance="fill">
-      <input class="color" [(ngModel)]="dateTime" [max]="tomorrow" placeholder="Search by date" matInput (dateInput)="dateChange($event)" [matDatepicker]="picker" >
-      
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker class="color" #picker></mat-datepicker>
-    </mat-form-field>
-  </div>       
+    <h2><b>Journey of Warrior</b></h2>
+</div>
   <mgl-timeline [toggle]="toggle" [alternate]="true" [side]="side">
     <mgl-timeline-entry *ngFor="let entry of entries; let i = index;" (expand)="onExpandEntry($event, i)">
       <mgl-timeline-entry-header (click)="onHeaderClick($event)">
-        <div>{{entry.header}}</div>
+        <div fxLayoutAlign="start start" fxLayout="row" fxLayoutGap="1vw">
+            <img src="{{entry.img}}" class="login-logo">  
+            <span>{{entry.header}}</span>
+        </div> 
+        <div style="color: red;">
+          {{ entry.time }}
+        </div>       
       </mgl-timeline-entry-header>
       <mgl-timeline-entry-content [expandAnimationTiming]="contentAnimation ? '200ms ease' : '0ms'" [collapseAnimationTiming]="contentAnimation ? '100ms ease' : '0ms'">
         <div>
