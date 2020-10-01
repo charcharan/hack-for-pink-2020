@@ -1,0 +1,44 @@
+<div>
+  <mat-card class="marginTop">
+    <mat-card-actions fxLayoutAlign="center center">
+      <mat-radio-group fxFlex="50" matInput fxLayoutAlign="center">
+        <mat-radio-button (change)="statusRadioChange($event, section)"  *ngFor="let section of requestPermission" [value]="section.value" [checked]="section.checked" >{{section.name}}</mat-radio-button>
+      </mat-radio-group>
+    </mat-card-actions>
+    <mat-card-content>
+
+      <div fxLayout="column" style="overflow-x:auto;">
+      <table ngClass.lt-lg="card">
+        <tr>
+          <th>Request Id</th>
+          <th>Type</th>
+          <th>Raised by</th>
+          <th>Date</th>
+          <!-- <th>Time From</th> -->
+          <th>Time</th>
+          <th>Status</th>
+          <th>Comments</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let req of pendingRequest">
+          <td>{{req.rqst_id}}</td>
+          <td>{{req.reason}}</td>
+          <td>{{req.rqst_raised_by}}</td>
+          <td>{{req.date }}</td>
+          <!-- <td>{{req.start_time | date: 'shortTime'}}</td> -->
+          <td>{{req.time }}</td>
+          <td>{{req.status}}</td>
+          <td>{{req.comment}}</td>
+          <td>
+            <p  ><label  ><img class="imgStyle" src="assets/tick.png"></label>
+            </p>
+            <p ><img class="imgStyle" src="assets/cross.png"></p></td>
+        </tr>
+      </table>
+    </div>
+  </mat-card-content>
+
+  </mat-card>
+  
+</div>
+

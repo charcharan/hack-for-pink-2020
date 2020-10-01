@@ -32,4 +32,11 @@ export class WarriorComponent implements OnInit {
   gotToMakeAWish(){
     this.route.navigate(['/makeAwish'])
   }
+
+  gotToScreeningMethods(){
+    this.route.navigate(['/screeningMethods'])
+  }
+
+  
+
 }

@@ -34,7 +34,8 @@ import { TimelineViewComponent } from '../app/timeline-view/timeline-view.compon
 import { GravatarModule, GravatarConfig, FALLBACK, RATING } from 'ngx-gravatar';
 import { MakeAWishComponent } from '../app/make-a-wish/make-a-wish.component';
 import { ImageSharingComponent } from '../app/image-sharing/image-sharing.component';
-
+import { AppointmentListComponent } from '../app/appointment-list/appointment-list.component';
+import{ScreeningMethodsComponent} from '../app/screening-methods/screening-methods.component';
 const gravatarConfig: GravatarConfig = {
   // fallback: FALLBACK.robohash,
   rating: RATING.g
@@ -46,7 +47,8 @@ const gravatarConfig: GravatarConfig = {
 @NgModule({
   declarations: [AppComponent, LoginComponentComponent,StudentRegistrationComponent,
     AdminHomeComponent, SignUpSuccessDialogComponent,DialogOverviewComponent,
-    RegistrationSuccessDialogComponent,DoctorComponent,WarriorComponent,TimelineViewComponent,MakeAWishComponent,ImageSharingComponent],
+    RegistrationSuccessDialogComponent,DoctorComponent,WarriorComponent,
+    TimelineViewComponent,MakeAWishComponent,ImageSharingComponent,AppointmentListComponent,ScreeningMethodsComponent],
     
   imports: [
     BrowserModule,
