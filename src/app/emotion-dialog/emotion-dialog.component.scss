@@ -1,0 +1,12 @@
+.emoji{
+    font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, 
+                emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
+    font-size: 5vw;
+    padding: 1vw;
+    cursor: pointer;
+}
+.emoji:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }

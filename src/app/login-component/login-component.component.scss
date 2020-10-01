@@ -291,3 +291,6 @@ Weather Card Styling
   cursor:pointer;
   overflow: hidden;        
 }
+
+::ng-deep .mat-ink-bar {
+  background-color:#e68ab9 !important;}
