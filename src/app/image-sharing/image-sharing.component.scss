@@ -20,14 +20,14 @@
   }
 
   .tp-section {
-    display: flex;
-    align-content: center;
-    align-items: center;
-    height: 60px;
+    // display: flex;
+    // align-content: center;
+    //align-items: center;
+    // height: 60px;
  }
 
  .tp-margin {
-  margin: 0 10px;
+  //margin: 0 10px;
 }
 
 .butMob{
@@ -41,11 +41,28 @@
   width: 8vw;
 }
 
+.butView{
+  height: 3vw;
+  width: 8vw;
+  color: darkslategray;
+  background-color: wheat;
+}
+
 .marginTop {
-  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .card {
   width: 40vw!important;
   max-width: 75vw!important;
+  background-color: white;
+}
+
+.table {
+  width: 50vw!important;
+  height: 30vw!important;
+  max-width: 75vw!important;
+  background-color: white;
+  border-radius: 25px;
+  padding-left: 2vw;
 }
