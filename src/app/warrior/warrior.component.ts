@@ -33,18 +33,10 @@ export class WarriorComponent implements OnInit {
     this.route.navigate(['/makeAwish'])
   }
 
-  step = 0;
-
-  setStep(index: number) {
-    this.step = index;
+  gotToScreeningMethods(){
+    this.route.navigate(['/screeningMethods'])
   }
 
-  nextStep() {
-    this.step++;
-  }
-
-  prevStep() {
-    this.step--;
-  }
+  
 
 }

@@ -9,6 +9,7 @@ import { TimelineViewComponent } from '../app/timeline-view/timeline-view.compon
 import { MakeAWishComponent } from '../app/make-a-wish/make-a-wish.component';
 import { ImageSharingComponent } from '../app/image-sharing/image-sharing.component';
 import { AppointmentListComponent } from '../app/appointment-list/appointment-list.component';
+import{ScreeningMethodsComponent} from '../app/screening-methods/screening-methods.component';
 const routes: Routes = [
   {
     path: '',
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path : 'appointment',
     component : AppointmentListComponent
+  },
+  {
+    path: 'screeningMethods',
+    component: ScreeningMethodsComponent
   }
   
 ];
