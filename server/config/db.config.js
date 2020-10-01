@@ -1,6 +1,6 @@
 module.exports = {
-    HOST: "",
-    USER: "",
-    PASSWORD: "",
-    DB: ""
+    HOST: "db4free.net",
+    USER: "hackforpink",
+    PASSWORD: "hackforpink",
+    DB: "hackforpink"
 };

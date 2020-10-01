@@ -2,7 +2,7 @@ var express = require('express')
 var app = express();
 var cors = require('cors');
 var bodyParser = require('body-parser');
-// var apiRouting = require('./api/api');
+var apiRouting = require('./api/api');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -15,7 +15,7 @@ middleWare =  function(req,res,next){
 
 	next();
 }
-// app.use("/api", apiRouting);
+app.use("/api", apiRouting);
 app.get('/', (req, res) => {
     res.send('I am running...');
 });
