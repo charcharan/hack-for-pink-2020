@@ -219,24 +219,30 @@ background: linear-gradient(to bottom, #372865, #000000);
   border-radius: 4vw;
 }
 .example-card {
-  max-width: 400px;
+  max-width: 300px;
 }
 
 .example-header-image {
-  // background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+  background: url('../../assets/profile_img_avatar.png') white;
+  // background-size: cover;
 }
 .cls-feed {
   padding: 2vw;
   background-color: grey;
   border-radius: 4vw;
-  margin: 4vw;
+  margin: 4vw;  
 }
 .cls-feed-txt {
   max-width: 50%;
   text-align: center;
+  padding: 1vw;
 }
 .cls-feed-txt-mobile {
   max-width: 70%;
   text-align: center;
+  padding: 1vw;
+}
+.avatar {
+  width: 40px;
+  border-radius: 2vw;
 }

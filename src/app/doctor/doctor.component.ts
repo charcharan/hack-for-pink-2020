@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+  import { from } from 'rxjs';
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
   }
-
+  openPendingAppoin(){
+    this.router.navigate(['/appointment']);
+  }
 }
