@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject,ViewChild,ElementRef } from '@angular/core';
+import { Component, OnInit, Inject,ViewChild,ElementRef,EventEmitter } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -13,7 +13,7 @@ export class DialogOverviewComponent implements OnInit {
   constructor(public dialogRef: MatDialogRef<DialogOverviewComponent>,private http:HttpClient, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   
-
+onApproveOrReject = new EventEmitter(); 
 
 @ViewChild("video")
 public video: ElementRef;
@@ -47,16 +47,16 @@ public captures: Array<any> =[];
     // })
   }
   public ngAfterViewInit() {
-    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
-            const mediaStream = new MediaStream();
-            const video = document.getElementById('video');
-            this.video.nativeElement.srcObject= mediaStream;
-            this.video.nativeElement.play;
-        });
+    // if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    //     navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+    //         const mediaStream = new MediaStream();
+    //         const video = document.getElementById('video');
+    //         this.video.nativeElement.srcObject= mediaStream;
+    //         this.video.nativeElement.play;
+    //     });
 
 
-    }
+    // }
 }
 
 public capture() {
@@ -64,5 +64,8 @@ public capture() {
     this.captures.push(this.canvas.nativeElement.toDataURL("image/png"));
 }
 
+openApproveOrReject(event) {
+  this.onApproveOrReject.emit(event);
+}
 
 }

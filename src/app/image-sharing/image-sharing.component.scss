@@ -1,5 +1,6 @@
 .container-timeline{
-    width: 700px;
+      width: 70vw!important;
+      height: 50vw!important;
       margin: 4vw;
       padding: 2px 16px;
       border-radius: 36px;
@@ -7,8 +8,7 @@
       animation: 1s ease-in-out slideup,1.5s ease-in-out fadein;
   }
   .container-timeline-mobile{
-    width: 300px;
-    
+      width: 300px;
       padding: 2px 16px;
       border-radius: 5px;
       background: -webkit-gradient(linear,left top,left bottom,from(#e75e97),to(#feb0e4));
@@ -18,17 +18,6 @@
     width: 50px;
     height: 40px;
   }
-
-  .tp-section {
-    // display: flex;
-    // align-content: center;
-    //align-items: center;
-    // height: 60px;
- }
-
- .tp-margin {
-  //margin: 0 10px;
-}
 
 .butMob{
   @media only screen and (max-width: 600px) {
@@ -52,17 +41,25 @@
   margin-bottom: 20px;
 }
 
-.card {
-  width: 40vw!important;
-  max-width: 75vw!important;
-  background-color: white;
-}
 
-.table {
-  width: 50vw!important;
-  height: 30vw!important;
+.card{
+  width: 60vw!important;
+  height: 40vw!important;
   max-width: 75vw!important;
   background-color: white;
   border-radius: 25px;
-  padding-left: 2vw;
+}
+
+.table-prop {
+  padding: 2px,2px,2px,2px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  align-items: center;
+}
+
+.mat-icon{
+  cursor: pointer;
+  color: palevioletred;
 }

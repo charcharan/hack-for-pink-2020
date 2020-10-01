@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../app/services/login.service';
 import { ToastrService } from 'ngx-toastr';
+import {MatDialog} from '@angular/material/dialog';
+import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
 
 @Component({
   selector: 'app-image-sharing',
@@ -43,7 +45,7 @@ export class ImageSharingComponent implements OnInit {
     ];
 
   selectedValue:number=101;
-  constructor(private login : LoginService,private toastr:ToastrService) { }
+  constructor(private login : LoginService,private toastr:ToastrService,public dialog:MatDialog) { }
 
   ngOnInit() {
     this.userType =  this.login.userType;
@@ -69,4 +71,39 @@ export class ImageSharingComponent implements OnInit {
       this.toastr.warning("The warrior has been notified for the approval to share the file(s).","Dear Doctor,"); 
     }
   }
+
+  openSharedWith(){
+    const dialogRef = this.dialog.open(DialogOverviewComponent,{
+      data:{
+        action:'SharedWith',
+        fileName: this.warriors[0].files[0],
+        doctors: this.doctors.map(x=>x.name)
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+     
+    });
+  }
+
+  openPendingApproval(){
+    const dialogRef = this.dialog.open(DialogOverviewComponent,{
+      data:{
+        action:'PendingApprovals',
+        fileName: this.warriors[0].files[0],
+        doctors: this.doctors.map(x=>x.name)
+      }
+    });
+    const subApproveOrReject = dialogRef.componentInstance.onApproveOrReject.subscribe((result) => {
+
+      const dialogRefApproveOrReject = this.dialog.open(DialogOverviewComponent,{
+        data:{
+          action:result,
+          fileName: this.warriors[0].files[0],
+          doctor: this.doctors[0].name[0]
+        }
+      });
+  })
+
+}
+  
 }

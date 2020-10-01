@@ -54,3 +54,55 @@
   <button mat-button  (click)="saveReport()">Ok</button>
 </mat-dialog-actions>
 </div>
+
+<div *ngIf="data.action=='SharedWith'">
+  <mat-dialog-content class="mat-typography">   
+    <div id="app">
+      <span><b><i>{{data.fileName}}</i></b> is shared with the following doctors</span>
+     <ul *ngFor="let doctor of data.doctors" class="SimpleMenu">
+       <li>{{doctor}}</li>
+     </ul>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+</div>
+
+<div *ngIf="data.action=='PendingApprovals'">
+  <mat-dialog-content class="mat-typography">   
+    <div id="app" fxFlex fxLayout="column" fxLayoutGap="1vw">
+      <div align="center"><b><i>{{data.fileName}}</i></b></div>
+      <table class = "mat-elevation-z8 table-prop marginTop"> 
+        <thead>
+          <tr>
+            <th>Doctor</th>
+            <th>Approve</th>
+            <th>Reject</th>
+          </tr>
+        </thead>
+        <tr *ngFor="let doctor of data.doctors">
+          <td><span>{{doctor}}</span></td>
+          <td><span class="material-icons mat-icon" (click)="openApproveOrReject('approve')">check_circle</span></td>
+          <td><span class="material-icons mat-icon" (click)="openApproveOrReject('reject')">disabled_by_default</span></td>
+        </tr>
+      </table>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+</div>
+
+
+<div *ngIf="data.action==='approve' || data.action ==='reject'">
+  <mat-dialog-content class="mat-typography">   
+    <div id="app">
+      Are you sure you want to {{data.action}} sharing {{data.fileName}} with {{data.doctor}} ?
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Yes</button>
+  <button mat-button mat-dialog-close>No</button>
+</mat-dialog-actions>
+</div>

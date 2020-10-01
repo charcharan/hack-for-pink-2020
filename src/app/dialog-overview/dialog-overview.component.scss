@@ -22,3 +22,33 @@ li {
   display: inline;
   padding: 5px;
 }
+
+ul.SimpleMenu {
+  list-style-type: none;
+  margin-left: 0px;
+  padding-left: 0px;
+}
+ul.SimpleMenu li {
+  background-color: #C0C0C0;
+  width: 8em;
+  border-style: outset;
+  border-width: 1px
+}
+
+.table-prop{
+  width: 30vw!important;
+  height: 20vw!important;
+  max-width: 75vw!important;
+  background-color: white;
+  border-radius: 25px;
+  padding: 2px,2px,2px,2px;
+}
+
+.marginTop {
+  margin-bottom: 20px;
+}
+
+.mat-icon{
+  cursor: pointer;
+  color: palevioletred;
+}
