@@ -218,6 +218,19 @@ background: linear-gradient(to bottom, #372865, #000000);
   height: 70px;
   border-radius: 4vw;
 }
+
+.test-flow{
+  width:85vw; margin-left: 2vw
+}
+
+.test-flow-mobile{
+  width:96vw; margin-left: 5vw
+}
+
+.test-flow-heading{
+  height:100px;
+  margin-top: 16px;
+}
 .example-card {
   max-width: 400px;
 }
@@ -239,4 +252,18 @@ background: linear-gradient(to bottom, #372865, #000000);
 .cls-feed-txt-mobile {
   max-width: 70%;
   text-align: center;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-right: 12px;
 }
