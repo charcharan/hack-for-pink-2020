@@ -1,3 +1,9 @@
+![Flamingo Logo](/src/assets/loginlogo.png)
+
+A Progressive Web App (PWA) which can be used by Breast Cancer Warriors, Doctors and Angels in any devices like Mobile/Laptop/Desktop. <br/>
+
+---
+
 ## Technologies used 🛠️
 - Angular
 - ExpressJS
@@ -6,6 +12,15 @@
 - CSS3
 - MySQL
 
+---
+
+## Test User Details
+
+| User Type  | Username          | Password      |
+| -----------| ------------------| --------------|
+| Warrior    | warrior@gmail.com | Warrior123    |
+| Doctor     | doctor@gmail.com  | Doctor123     |
+| Angel      | angel@gmail.com   | Angel123      |
 ---
 
 ## Development
