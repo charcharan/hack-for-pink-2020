@@ -348,12 +348,12 @@ export class LoginComponentComponent implements OnInit {
   doGoogleLogin() {
     this.loginService.GoogleAuth().then(data => {
     console.log("doGoogleLogin -> data", data)
-    this.loginService.userType = 'parent';
+    this.loginService.userType = 'warrior';
     this.loginService.userName = data.user.displayName.split(" ")[0]+ " "+ data.user.displayName.split(" ")[1];
       let res = {
         code : 200,
         message : "Login Successful",
-        userType: "parent",
+        userType: "warrior",
         data : {
           email_id: data.user.email,
           first_name: data.user.displayName.split(" ")[0],
