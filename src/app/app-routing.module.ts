@@ -11,6 +11,7 @@ import { ImageSharingComponent } from '../app/image-sharing/image-sharing.compon
 import { AppointmentListComponent } from '../app/appointment-list/appointment-list.component';
 import{ScreeningMethodsComponent} from '../app/screening-methods/screening-methods.component';
 import { AngelViewComponent } from '../app/angel-view/angel-view.component';
+import { DocAppointmentComponent } from '../app/doc-appointment/doc-appointment.component';
 const routes: Routes = [
   {
     path: '',
@@ -55,6 +56,10 @@ const routes: Routes = [
   {
     path : 'angel',
     component : AngelViewComponent
+  },
+  {
+    path: 'docAppointment',
+    component: DocAppointmentComponent
   }
   
 ];

@@ -38,6 +38,7 @@ import { AppointmentListComponent } from '../app/appointment-list/appointment-li
 import{ScreeningMethodsComponent} from '../app/screening-methods/screening-methods.component';
 import { EmotionDialogComponent } from '../app/emotion-dialog/emotion-dialog.component';
 import { AngelViewComponent } from '../app/angel-view/angel-view.component';
+import { DocAppointmentComponent } from '../app/doc-appointment/doc-appointment.component';
 const gravatarConfig: GravatarConfig = {
   // fallback: FALLBACK.robohash,
   rating: RATING.g
@@ -51,7 +52,7 @@ const gravatarConfig: GravatarConfig = {
     AdminHomeComponent, SignUpSuccessDialogComponent,DialogOverviewComponent,
     RegistrationSuccessDialogComponent,DoctorComponent,WarriorComponent,EmotionDialogComponent,
     TimelineViewComponent,MakeAWishComponent,ImageSharingComponent,AppointmentListComponent,ScreeningMethodsComponent,
-    AngelViewComponent],
+    AngelViewComponent,DocAppointmentComponent],
     
   imports: [
     BrowserModule,

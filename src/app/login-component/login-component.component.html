@@ -4,9 +4,18 @@
   <div class="welcomeMsg">
     <img src="assets/loginlogo.png" ngClass.gt-sm="login-logo" ngClass.lt-lg="login-logo-mobile">               
   </div>  
+  <div fxLayout="column" fxLayout.lt-md="column" fxLayoutGap="2vw">
+    <strong>Ready to be you!! Go ahead and Login to the application.....</strong>
+    <mat-tab-group [(selectedIndex)]="selectedTab" (selectedTabChange)="onTabChanged($event)" ngStyle.gt-sm="padding-bottom: 2vw;">
+      <mat-tab label="Cool!!! 😎"></mat-tab>
+      <mat-tab label="We respect your privacy 👍"></mat-tab>
+      <mat-tab label="Already have an account 😇"></mat-tab>
+    </mat-tab-group>  
+  </div>
   <div class="loginContainer">
-    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="2vw">
-      <div fxFlex="40" class="quickLogin" fxLayoutAlign="center start">
+    
+    <!-- <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="2vw">       -->
+      <div *ngIf = "yesFlag" [ngClass]="{'quickLogin_Yes': yesFlag, 'quickLogin_No': noFlag, 'quickLogin_Already': alreadyFlag}">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2vh">
           <div style="margin-top: 2vh;">
           </div>
@@ -33,13 +42,9 @@
                   
         </div>
       </div>     
-      <div fxFlex="55" class="quickLogin" fxLayoutAlign="center start">
+      <div *ngIf = "alreadyFlag" [ngClass]="{'quickLogin_Yes': yesFlag, 'quickLogin_No': noFlag, 'quickLogin_Already': alreadyFlag}">
         <div fxLayout="column" fxLayoutAlign="center center">
           <div style="margin-top: 3vh;">
-            <mat-tab-group [(selectedIndex)]="selectedTab" (selectedTabChange)="onTabChanged($event)" ngStyle.gt-sm="padding-bottom: 2vw;">
-              <mat-tab label="Login"></mat-tab>
-              <mat-tab label="SignUp"></mat-tab>
-            </mat-tab-group>
             <div fxLayoutAlign="center center">
               <mat-form-field *ngIf="login">
                 <mat-select [(ngModel)]="selectedValue" name="loginTypes" (selectionChange)="typeChange()">
@@ -72,13 +77,14 @@
               </div>    
             </div>  
           </div>    
-          <div *ngIf="signUp"> 
-            <div fxLayout="column">
-             
+        </div>
+      </div>
+          <div *ngIf = "noFlag" [ngClass]="{'quickLogin_Yes': yesFlag, 'quickLogin_No': noFlag, 'quickLogin_Already': alreadyFlag}"> 
+            <div fxLayout="column" style="margin-left: 10vw;">             
               <div fxFlex="50" style="margin-top: 2vh;">
                 <form [formGroup]="signUpForm">
                   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
-                    <div fxFlex="50">
+                    <div fxFlex="40">
                       <mat-form-field>
                         <input matInput  formControlName="firstName" placeholder="First name">
                       </mat-form-field>
@@ -90,7 +96,7 @@
                     </div>
                   </div>
                   <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
-                    <div fxFlex="50">
+                    <div fxFlex="40">
                       <mat-form-field>
                         <input matInput  type="email" formControlName="emailId" [(ngModel)]="emailGrav" placeholder="Email Id">
                       </mat-form-field>
@@ -102,7 +108,7 @@
                     </div>                   
                   </div>
                   <div fxLayout="row"  fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
-                    <div fxFlex="50">
+                    <div fxFlex="40">
                       <mat-form-field>
                         <input matInput  type="password" formControlName="confirmPassword" placeholder="Confirm Password"
                                 (keyup)="checkPassword($event)">
@@ -126,9 +132,11 @@
                       </button>
                     </div>
                   </div>
-                  <div fxLayout="row"  fxLayout.lt-md="column" fxLayoutGap="1vw" fxLayoutAlign="start start">
-                    <div fxFlex="100" fxLayoutAlign="space-between end">
+                  <div fxLayout="row"  fxLayout.lt-md="row" fxLayoutGap="1vw" fxLayoutAlign="end end">
+                    <div fxFlex="50" fxLayoutAlign="space-between end">
                       <button mat-raised-button color="primary" type="submit" class="button_outline" (click)="doSignUp()">SignUp</button>&nbsp;&nbsp;
+                    </div>
+                    <div fxFlex="50" fxLayoutAlign="space-between end">
                       <button (click)="resetForm(2)" mat-raised-button class="button_dark">Reset</button>
                     </div>
                   </div>                
@@ -137,10 +145,8 @@
             </div>      
           </div>
         </div>
-      </div>
-    </div>
+    <!-- </div> -->
     
-  </div>
   <!-- <div *ngIf="signUp" class="loginContainer">
       <div class="quickLogin" fxLayoutAlign="center start">
         <div fxLayout="column" fxLayoutAlign="center center">

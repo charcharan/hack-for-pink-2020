@@ -12,12 +12,12 @@ Weather Card Styling
     padding: 1rem;
     margin: 2rem;
     width: 77rem;
-    height: 35rem;
+    height: 39rem;
     background-color: white;
     border-radius: 1.75rem;
     animation: slideup 1s ease-in-out, fadein 1.25s ease-in-out 0ms 1;
     @media only screen and (max-width: 600px) {
-      width: 15rem;
+      width: 17rem;
       height: 53rem;
       padding-right: 4rem;
       padding-bottom: 8rem;
@@ -158,11 +158,37 @@ Weather Card Styling
     }
   }
 
-  .quickLogin{
+  .quickLogin_Yes{
     background-color: white;
     border-radius: 1.75rem;
-    height: 27rem;
+    height: 24rem;
     border: 2px solid #e68ab9;
+    @media only screen and (max-width: 600px) {
+      height: 26rem;
+      margin-right: 7vw;
+    }
+  }
+
+  .quickLogin_No{
+    background-color: white;
+    border-radius: 1.75rem;
+    height: 23rem;
+    border: 2px solid #e68ab9;
+    @media only screen and (max-width: 600px) {
+      height: 39rem;
+      margin-right: 7vw;
+    }
+  }
+
+  .quickLogin_Already{
+    background-color: white;
+    border-radius: 1.75rem;
+    height: 23rem;
+    border: 2px solid #e68ab9;
+    @media only screen and (max-width: 600px) {
+      height: 22rem;
+      margin-right: 7vw;
+    }
   }
 
   .fa {
@@ -294,3 +320,7 @@ Weather Card Styling
 
 ::ng-deep .mat-ink-bar {
   background-color:#e68ab9 !important;}
+
+  .mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }

@@ -26,7 +26,6 @@ export class LoginComponentComponent implements OnInit {
   signUp:boolean = false;
   signUpSuccess:boolean = false;
   selectedValue:number;
-  selectedTab:number;
   somePlaceholder:string;
   studentLogin:boolean=false;
   notification:string;
@@ -48,7 +47,28 @@ export class LoginComponentComponent implements OnInit {
      {"value":2,"viewValue":"Doctor"},
      {"value":3,"viewValue":"Angel"}
     ];
+    yesFlag:boolean=false;
+    noFlag:boolean=false;
+    alreadyFlag:boolean = false;
+     selectedTab:number=1;
   ngOnInit() {
+    const tabCount = 3;
+    this.selectedTab = (this.selectedTab + 1) % tabCount;
+    if(this.selectedTab === 0){
+      this.yesFlag = true;
+      this.noFlag = false;
+      this.alreadyFlag=false;
+      // this.studentLogin = false;
+    }else if(this.selectedTab === 1){
+      this.yesFlag = false;
+      this.noFlag = true;
+      this.alreadyFlag=false;
+      // this.studentLogin = false;
+    } else {
+      this.yesFlag = false;
+      this.noFlag = false;
+      this.alreadyFlag=true;
+    }
     this.selectedValue = 1;
     this.somePlaceholder = "Warrior Name";
     this.othersLogin = true;
@@ -66,18 +86,24 @@ export class LoginComponentComponent implements OnInit {
     }, {validator: this.passwordConfirming});   
     this.loginService.setSearchData('');
   }
-  onTabChanged(event:any){
+  onTabChanged(event:any){   
     this.loginForm.reset();
     this.signUpForm.reset();
     this.invalidLogin = false;
     if(event.index === 0){
-      this.login = true;
-      this.signUp = false;
+      this.yesFlag = true;
+      this.noFlag = false;
+      this.alreadyFlag=false;
       // this.studentLogin = false;
     }else if(event.index === 1){
-      this.login = false;
-      this.signUp = true;
+      this.yesFlag = false;
+      this.noFlag = true;
+      this.alreadyFlag=false;
       // this.studentLogin = false;
+    } else {
+      this.yesFlag = false;
+      this.noFlag = false;
+      this.alreadyFlag=true;
     }
   }
 
