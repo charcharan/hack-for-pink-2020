@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
 import { Router} from '@angular/router';
 import { EmotionDialogComponent } from '../emotion-dialog/emotion-dialog.component';
+import { LoginService } from '../services/login.service';
 @Component({
   selector: 'app-warrior',
   templateUrl: './warrior.component.html',
@@ -10,11 +11,13 @@ import { EmotionDialogComponent } from '../emotion-dialog/emotion-dialog.compone
 })
 export class WarriorComponent implements OnInit {
 
-  constructor(public dialog:MatDialog,private route : Router) { }
+  constructor(public dialog:MatDialog,private route : Router,private loginSrv : LoginService) { }
 
   ngOnInit() {
-    window.scroll(0,0);
-    this.openEmotionDialog();
+   document.querySelector('#scrollId').scrollIntoView();  
+    if(this.loginSrv.surveyFlag){
+      this.openEmotionDialog();
+    }    
   }
 
   openReportScanning(){
@@ -40,8 +43,9 @@ export class WarriorComponent implements OnInit {
   }
 
   openEmotionDialog() {
+    let width = window.screen.width < 599 ? '80%' : '48%'
     const dialogRef = this.dialog.open(EmotionDialogComponent,{
-      width : '48%',
+      width : width,
       height : '40%',
       disableClose : true,
       hasBackdrop : true,

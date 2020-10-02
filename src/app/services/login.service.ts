@@ -16,6 +16,7 @@ export class LoginService {
   studentData: any;
   avatar:string="";
   emailId:string;
+  surveyFlag : boolean = true;
 doLogin(data):Observable<any>{
 	return this.http.get<any>("http://localhost:3000/api/login/"+data.userName+"/"+data.password, {responseType: 'json'});
 }

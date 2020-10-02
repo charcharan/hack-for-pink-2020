@@ -1,13 +1,13 @@
 <div>
   
-<div fxLayout="row">
-    <h2 mat-dialog-title class="emoji">😄</h2>
-    <h2 mat-dialog-title class="emoji">😊</h2>
-    <h2 mat-dialog-title class="emoji">😐</h2>
-    <h2 mat-dialog-title class="emoji">☹</h2>
-    <h2 mat-dialog-title class="emoji">😡</h2>
+<div fxLayout="row" (click)="closePop()">
+    <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile">😄</h2>
+    <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile">😊</h2>
+    <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile">😐</h2>
+    <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile">☹</h2>
+    <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile">😡</h2>
 </div>
-    <div mat-dialog-content fxLayoutAlign="center center"><h3>Hi Warrior, Please select the way you feel.</h3></div>
+    <div mat-dialog-content fxLayoutAlign="center center"><h3>Hi Warrior, Tell us how you are feeling today.</h3></div>
     <div mat-dialog-actions>
       <button mat-button mat-dialog-close class="button_outline">Close</button>
     </div>

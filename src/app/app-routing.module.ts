@@ -10,6 +10,7 @@ import { MakeAWishComponent } from '../app/make-a-wish/make-a-wish.component';
 import { ImageSharingComponent } from '../app/image-sharing/image-sharing.component';
 import { AppointmentListComponent } from '../app/appointment-list/appointment-list.component';
 import{ScreeningMethodsComponent} from '../app/screening-methods/screening-methods.component';
+import { AngelViewComponent } from '../app/angel-view/angel-view.component';
 const routes: Routes = [
   {
     path: '',
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'screeningMethods',
     component: ScreeningMethodsComponent
+  },
+  {
+    path : 'angel',
+    component : AngelViewComponent
   }
   
 ];

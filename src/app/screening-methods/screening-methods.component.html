@@ -2,8 +2,8 @@
  <!-- Test Flow with positive steps -->
  <mat-accordion  ngClass.gt-md="test-flow"  ngClass.lt-md="test-flow-mobile"
  class="example-headers-align" fxLayoutGap="2vw">
-  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle >
-    <mat-expansion-panel-header >
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle ngClass.xs="expansion-panel" >
+    <mat-expansion-panel-header ngClass.xs="expansion-header">
       <mat-panel-title>
         Mammogram
       </mat-panel-title>
@@ -21,8 +21,8 @@
     </mat-action-row>
   </mat-expansion-panel>
 
-  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle>
-    <mat-expansion-panel-header fxLayout.xs="column" ngClass.lt-md="test-flow-heading">
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle ngClass.xs="expansion-panel">
+    <mat-expansion-panel-header fxLayout.xs="column"  ngClass.xs="expansion-header">
       <mat-panel-title>
         Breast UltraSound
       </mat-panel-title>
@@ -40,8 +40,8 @@
     </mat-action-row>
   </mat-expansion-panel>
 
-  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle>
-    <mat-expansion-panel-header style="height: 150px;">
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle ngClass.xs="expansion-panel">
+    <mat-expansion-panel-header  ngClass.xs="expansion-header">
       <mat-panel-title>
        Breast Biospy
       </mat-panel-title>
@@ -59,8 +59,8 @@
     </mat-action-row>
   </mat-expansion-panel>
 
-  <mat-expansion-panel ngClass.gt-md="test-end" [expanded]="step === 3" (opened)="setStep(3)" hideToggle>
-    <mat-expansion-panel-header >
+  <mat-expansion-panel ngClass.gt-md="test-end" [expanded]="step === 3" (opened)="setStep(3)" hideToggle ngClass.xs="expansion-panel">
+    <mat-expansion-panel-header  ngClass.xs="expansion-header">
       <mat-panel-title>
         Breast MRI
       </mat-panel-title>

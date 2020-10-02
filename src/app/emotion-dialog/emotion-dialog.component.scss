@@ -10,3 +10,10 @@
     -webkit-transform: scale(1.5); /* Safari 3-8 */
     transform: scale(1.1); 
   }
+
+  .emoji-mobile {
+    font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, 
+                emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
+    font-size: 8vw;
+    padding: 1vw;  
+  }

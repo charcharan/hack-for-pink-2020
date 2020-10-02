@@ -45,6 +45,7 @@ export class AppComponent {
     this.showMenu = false;
     localStorage.clear();
     this.userType = null;
+    this.login.surveyFlag = true;
     this.route.navigate(['/']);
   }
   goToHome() {

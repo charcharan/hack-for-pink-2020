@@ -37,6 +37,7 @@ import { ImageSharingComponent } from '../app/image-sharing/image-sharing.compon
 import { AppointmentListComponent } from '../app/appointment-list/appointment-list.component';
 import{ScreeningMethodsComponent} from '../app/screening-methods/screening-methods.component';
 import { EmotionDialogComponent } from '../app/emotion-dialog/emotion-dialog.component';
+import { AngelViewComponent } from '../app/angel-view/angel-view.component';
 const gravatarConfig: GravatarConfig = {
   // fallback: FALLBACK.robohash,
   rating: RATING.g
@@ -49,7 +50,8 @@ const gravatarConfig: GravatarConfig = {
   declarations: [AppComponent, LoginComponentComponent,StudentRegistrationComponent,
     AdminHomeComponent, SignUpSuccessDialogComponent,DialogOverviewComponent,
     RegistrationSuccessDialogComponent,DoctorComponent,WarriorComponent,EmotionDialogComponent,
-    TimelineViewComponent,MakeAWishComponent,ImageSharingComponent,AppointmentListComponent,ScreeningMethodsComponent],
+    TimelineViewComponent,MakeAWishComponent,ImageSharingComponent,AppointmentListComponent,ScreeningMethodsComponent,
+    AngelViewComponent],
     
   imports: [
     BrowserModule,

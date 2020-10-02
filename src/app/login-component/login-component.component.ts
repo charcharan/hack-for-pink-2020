@@ -43,11 +43,14 @@ export class LoginComponentComponent implements OnInit {
     width: '150px',
     borderRadius: '20%'
   };
-   types:any=[{"value":1,"viewValue":"Warrior"},
-  {"value":2,"viewValue":"Doctor"}];
+   types:any=[
+     {"value":1,"viewValue":"Warrior"},
+     {"value":2,"viewValue":"Doctor"},
+     {"value":3,"viewValue":"Angel"}
+    ];
   ngOnInit() {
     this.selectedValue = 1;
-    this.somePlaceholder = "Username";
+    this.somePlaceholder = "Warrior Name";
     this.othersLogin = true;
     this.loginForm = this.formBuilder.group({
       userName: ['', Validators.required],      
@@ -145,11 +148,13 @@ export class LoginComponentComponent implements OnInit {
     if(this.selectedValue === 1){
       this.othersLogin = true;
       this.studentLogin = false;
-      this.somePlaceholder = "Username"
+      this.somePlaceholder = "Warrior Name";
     }else if(this.selectedValue === 2){
       this.othersLogin = false;
       this.studentLogin = true;
-      this.somePlaceholder = "Warrior Name"
+      this.somePlaceholder = "Doctor Name";
+    }else {
+      this.somePlaceholder = "Angel Name";
     }
     //   this.studentLogin = false;
     // }else if(this.selectedValue === 3){
@@ -160,14 +165,38 @@ export class LoginComponentComponent implements OnInit {
   }
 
   doLogin(){
-    let res = {};
-    res =  {
-      code : 200,
-      message : "Login Successful",
-      data : '',
-      userType: this.loginForm.get('password').value === 'doctor123' ? 'doctor' : 'warrior'
-    };
-      
+    let res = {};    
+    if (this.loginForm.get('userName').value === "warrior@gmail.com" && 
+          this.loginForm.get('password').value == "Warrior123") {
+		
+      res = {
+				code : 200,
+				message : "Login Successful",
+				userType: 'warrior',
+				data : ''
+			};
+		}
+		else if (this.loginForm.get('userName').value === "doctor@gmail.com" && 
+    this.loginForm.get('password').value == "Doctor123") {
+			
+    res = {
+				code : 200,
+				message : "Login Successful",
+				userType: 'doctor',
+				data : ''
+			};
+    }
+    else if (this.loginForm.get('userName').value === "angel@gmail.com" && 
+    this.loginForm.get('password').value == "Angel123") {
+			
+    res = {
+				code : 200,
+				message : "Login Successful",
+				userType: 'angel',
+				data : ''
+			};
+		}
+
     this.success(res);
     // if(this.studentLogin){
     //   this.loginService.searchStudent(this.loginForm.get('userName').value).subscribe(s=>{
@@ -301,26 +330,21 @@ export class LoginComponentComponent implements OnInit {
 	}
 
 	// Login success function
-	success(data){
-    console.log("success -> data", data)
-   
+	success(data){       
 		if (data.code == 200 && data.userType === "doctor") {
       this.loginService.userType = 'doctor';
 			this.router.navigate(['/doctor']);
 		}else if(data.code == 200 && data.userType === "warrior"){
       this.loginService.userType = 'warrior';
-      this.runTimer();
-			this.router.navigate(['/warrior']);
-		}	else if(data.code == 200 && data.userType === "driver"){     
-      this.router.navigate(['/drivHome']);
-    } else if(data.code == 200 && data.userType === "staff"){     
-      this.router.navigate(['/staffHome']);
-    }else if(data.code == 200 && data.userType === "student"){     
-      this.loginService.setStudentInfo(data['data']);
-      this.router.navigate(['/studentHome']);
+      this.ngZone.run(() => {
+        this.router.navigate(['/warrior']);
+      });
+      this.runTimer();		
+		}	else if(data.code == 200 && data.userType === "angel"){     
+      this.router.navigate(['/angel']);
     } else {
       this.invalidLogin = true;
-      this.errorMsg = this.studentLogin ? "Roll Number" : "Username"+  "or Password are Incorrect";
+      this.errorMsg = "Username"+  "or Password are Incorrect";
     }
     this.app.reload();
   }
