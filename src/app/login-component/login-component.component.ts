@@ -47,29 +47,22 @@ export class LoginComponentComponent implements OnInit {
      {"value":2,"viewValue":"Doctor"},
      {"value":3,"viewValue":"Angel"}
     ];
-    yesFlag:boolean=false;
-    noFlag:boolean=false;
-    alreadyFlag:boolean = false;
-     selectedTab:number=1;
-  ngOnInit() {
-    const tabCount = 3;
-    this.selectedTab = (this.selectedTab + 1) % tabCount;
-    if(this.selectedTab === 0){
-      this.yesFlag = true;
-      this.noFlag = false;
-      this.alreadyFlag=false;
-      // this.studentLogin = false;
-    }else if(this.selectedTab === 1){
-      this.yesFlag = false;
-      this.noFlag = true;
-      this.alreadyFlag=false;
-      // this.studentLogin = false;
-    } else {
-      this.yesFlag = false;
-      this.noFlag = false;
-      this.alreadyFlag=true;
+  yesFlag:boolean=false;
+  noFlag:boolean=false;
+  alreadyFlag:boolean = false;
+  selectedTab:number=1;
+  yesOrNo:string;
+  ngOnInit() {    
+    window.scrollTo(0,0);
+    this.selectedValue = 1;    
+    this.invalidLogin = false;
+    if(this.selectedValue === 0){
+      this.login = true;
+      this.signUp = false;
+    }else if(this.selectedValue === 1){
+      this.login = false;
+      this.signUp = true;
     }
-    this.selectedValue = 1;
     this.somePlaceholder = "Warrior Name";
     this.othersLogin = true;
     this.loginForm = this.formBuilder.group({
@@ -91,27 +84,23 @@ export class LoginComponentComponent implements OnInit {
     this.signUpForm.reset();
     this.invalidLogin = false;
     if(event.index === 0){
-      this.yesFlag = true;
-      this.noFlag = false;
-      this.alreadyFlag=false;
-      // this.studentLogin = false;
+      this.login = true;
+      this.signUp = false;
     }else if(event.index === 1){
-      this.yesFlag = false;
-      this.noFlag = true;
-      this.alreadyFlag=false;
-      // this.studentLogin = false;
-    } else {
-      this.yesFlag = false;
-      this.noFlag = false;
-      this.alreadyFlag=true;
+      this.login = false;
+      this.signUp = true;
     }
   }
 
   runTimer(){
-    const myNumber = interval(90000);
+    const myNumber = interval(10000);
     let msg:string;
      this.subscribe = myNumber.subscribe((number:number) => { 
-      this.toastr.warning("A Gentle Reminder to Self Assess","Dear warrior,"); 
+      const mm = this.toastr.warning("A Gentle Reminder to Self Assess","Dear warrior,"); 
+      mm.onTap.subscribe((action) => {
+        console.log(action)
+        document.getElementById('engt-launcher-button').click()
+      });
       // this.http.get(environment.nodeNotifUrl+"/getNotification", {responseType: 'json'}).subscribe(s => {
     //     if(s && s["notification"] && s["notification"][0] !== "0"){
     //     this.notify.getNotification(s["notification"]).subscribe(res => {
@@ -365,7 +354,7 @@ export class LoginComponentComponent implements OnInit {
       this.ngZone.run(() => {
         this.router.navigate(['/warrior']);
       });
-      this.runTimer();		
+      // this.runTimer();		
 		}	else if(data.code == 200 && data.userType === "angel"){     
       this.router.navigate(['/angel']);
     } else {
@@ -421,5 +410,15 @@ export class LoginComponentComponent implements OnInit {
 
   getAvatar(f:any) {
     this.avatar = f;
+  }
+
+  clickEvent(event:any){
+    if(event.value === 'yes'){
+      this.yesFlag=true;
+      this.noFlag=false;
+    } else {
+      this.noFlag = true;
+      this.yesFlag = false;
+    }
   }
 }

@@ -1,5 +1,5 @@
 <div>
-  <mat-card class="card marginTop">
+  <mat-card class="marginTop">
       <mat-card-header>
           <!-- <div mat-card-avatar class="example-header-image"></div> -->
           <mat-card-title>
@@ -8,8 +8,8 @@
       </mat-card-header>
       <mat-card-content>
           <form [formGroup]="makeAwishForm">                
-            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">                 
-                  <mat-form-field  fxFlex="50" fxLayoutGap="2vw">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw" ngStyle.gt-md="margin-bottom: 4vh;">                 
+                  <mat-form-field  fxFlex="33" fxLayoutGap="2vw">
                       <mat-label>First Name</mat-label>
                       <input  matInput
                           placeholder="Enter First Name" id="firstName" formControlName="firstName"
@@ -18,7 +18,7 @@
                           First name is <strong>required</strong>
                       </mat-error>
                   </mat-form-field>
-                  <mat-form-field  fxFlex="50">
+                  <mat-form-field  fxFlex="33">
                       <mat-label>Last Name</mat-label>
                       <input  matInput
                           placeholder="Enter Last Name" name="lastName" required formControlName="lastName"
@@ -27,25 +27,19 @@
                           Last name is <strong>required</strong>
                       </mat-error>
                   </mat-form-field>
+                  <mat-form-field  fxFlex="33">
+                    <mat-label>Date of Birth</mat-label>                   
+                    <input class="color" required [max]="tomorrow" formControlName="dob" placeholder="Enter Date Of Birth" matInput
+                        [matDatepicker]="picker">
+                    <!-- STYLE="color: #FFFFFF; background-color: #FFFFFF;" -->
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker class="color" #picker></mat-datepicker>
+                    <mat-error *ngIf="makeAwishForm.hasError('required')">
+                        Date of Birth is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>   
               </div>              
-              <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">       
-                <mat-form-field  fxFlex="50">
-                  <mat-label>Date of Birth</mat-label>
-                  <!-- <input  matInput
-                  placeholder="Enter Date of Birth" name="dob" required
-                  formControlName="dob" type="text" >
-              <mat-error *ngIf="studentRegistrationForm.hasError('required')">
-                  Date of Birth is <strong>required</strong>
-              </mat-error> -->
-                  <input class="color" required [max]="tomorrow" formControlName="dob" placeholder="Enter Date Of Birth" matInput
-                      [matDatepicker]="picker">
-                  <!-- STYLE="color: #FFFFFF; background-color: #FFFFFF;" -->
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker class="color" #picker></mat-datepicker>
-                  <mat-error *ngIf="makeAwishForm.hasError('required')">
-                      Date of Birth is <strong>required</strong>
-                  </mat-error>
-              </mat-form-field>           
+              <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw" ngStyle.gt-md="margin-bottom: 4vh;">                               
                   <mat-form-field  fxFlex="100">
                       <mat-label>E-mail</mat-label>
                       <input  matInput
@@ -55,23 +49,21 @@
                           E-mail is <strong>required</strong>
                       </mat-error>
                   </mat-form-field>
-              </div>
-              <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">
                   <mat-form-field  fxFlex="50">
-                      <mat-label>Guardian Name</mat-label>
-                      <input   matInput
-                          placeholder="Enter Guardian's Name" name="guardianName"
-                          formControlName="guardianName" type="text" >
-                  </mat-form-field>
-                  <mat-form-field  fxFlex="50">
-                      <mat-label>Guardian's mobile no</mat-label>
-                      <input   matInput
-                          placeholder="Enter Guardian's mobile no" name="guradianMobile"
-                          formControlName="guradianMobile" type="text" >
-                  </mat-form-field>
-              </div>
+                    <mat-label>Guardian Name</mat-label>
+                    <input   matInput
+                        placeholder="Enter Guardian's Name" name="guardianName"
+                        formControlName="guardianName" type="text" >
+                    </mat-form-field>
+                    <mat-form-field  fxFlex="50">
+                        <mat-label>Guardian's mobile no</mat-label>
+                        <input   matInput
+                        placeholder="Enter Guardian's mobile no" name="guradianMobile"
+                        formControlName="guradianMobile" type="text" >
+                    </mat-form-field>
+              </div>            
               <div fxLayout="column">
-                          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">
+                          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw" ngStyle.gt-md="margin-bottom: 4vh;">
                               <mat-form-field  fxFlex="50">
                                   <mat-label>Address Line 1</mat-label>
                                   <input  matInput
@@ -85,34 +77,32 @@
                                       formControlName="address2" type="text" >
                               </mat-form-field>
                           </div>
-                          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">
-                              <mat-form-field  fxFlex="50">
+                          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw" ngStyle.gt-md="margin-bottom: 4vh;">
+                              <mat-form-field  fxFlex="25">
                                   <mat-label>City</mat-label>
                                   <input  matInput
                                       placeholder="Enter City" name="city"  formControlName="city" type="text"
                                       >
                               </mat-form-field>
-                              <mat-form-field  fxFlex="50">
+                              <mat-form-field  fxFlex="25">
                                   <mat-label>State</mat-label>
                                   <input   matInput
                                       placeholder="Enter State" name="state" formControlName="state" type="text"
                                       >
                               </mat-form-field>
-                          </div>
-                          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap = "1vw">
-                              <mat-form-field  fxFlex="50">
-                                  <mat-label>Country</mat-label>
-                                  <input  matInput
-                                      placeholder="Enter Country" name="country" formControlName="country"
-                                      type="text" >
-                              </mat-form-field>
-                              <mat-form-field  fxFlex="50">
-                                  <mat-label>Zipcode</mat-label>
-                                  <input  matInput
-                                      placeholder="Enter Zipcode" name="zipcode"  formControlName="zipcode"
-                                      type="text" >
-                              </mat-form-field>
-                          </div>                     
+                              <mat-form-field  fxFlex="25">
+                                <mat-label>Country</mat-label>
+                                <input  matInput
+                                    placeholder="Enter Country" name="country" formControlName="country"
+                                    type="text" >
+                            </mat-form-field>
+                            <mat-form-field  fxFlex="25">
+                                <mat-label>Zipcode</mat-label>
+                                <input  matInput
+                                    placeholder="Enter Zipcode" name="zipcode"  formControlName="zipcode"
+                                    type="text" >
+                            </mat-form-field>
+                          </div>                                             
               </div>
                       
               <div fxLayout="row" fxLayout.xs="column">

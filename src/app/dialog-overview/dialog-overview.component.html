@@ -117,3 +117,28 @@
     <button mat-button mat-dialog-close  class="button_dark">CLOSE</button>
   </mat-dialog-actions>  
 </div>
+
+<div *ngIf="data.action=='share'">
+  <mat-dialog-content class="mat-typography">   
+    <div id="app">
+      <span>Select the doctor you want share the file <b><i>{{data.fileName}}</i></b></span>
+     <ul *ngFor="let doctor of data.doctors" class="SimpleMenu">
+       <mat-checkbox></mat-checkbox><li>{{doctor}}</li>
+     </ul>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Share</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
+</div>
+
+<div *ngIf="data.action=='wish'" >
+  <mat-dialog-content class="mat-typography">
+    <p >Your Wish has been recorded </p>
+
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Yay!!</button>
+  </mat-dialog-actions>
+</div>

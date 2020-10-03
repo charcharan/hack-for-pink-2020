@@ -4,17 +4,22 @@
   <div class="welcomeMsg">
     <img src="assets/loginlogo.png" ngClass.gt-sm="login-logo" ngClass.lt-lg="login-logo-mobile">               
   </div>  
-  <div fxLayout="column" fxLayout.lt-md="column" fxLayoutGap="2vw">
-    <strong>Ready to be you!! Go ahead and Login to the application.....</strong>
-    <mat-tab-group [(selectedIndex)]="selectedTab" (selectedTabChange)="onTabChanged($event)" ngStyle.gt-sm="padding-bottom: 2vw;">
-      <mat-tab label="Cool!!! 😎"></mat-tab>
-      <mat-tab label="We respect your privacy 👍"></mat-tab>
-      <mat-tab label="Already have an account 😇"></mat-tab>
-    </mat-tab-group>  
+  <div fxLayout="column" fxLayout.lt-md="column" fxLayoutAlign="center center" fxLayoutGap="2vw">
+    <strong style="color: #f45b8e;">Ready to be you ?</strong>    
+    <mat-radio-group aria-label="Select an option" [(ngModel)]="yesOrNo" (change)="clickEvent($event)">
+      <mat-radio-button value="yes">Yes</mat-radio-button>
+      <mat-radio-button value="no">No</mat-radio-button>
+    </mat-radio-group>
+    <div fxFlex *ngIf = "yesFlag" style="text-align: center;">      
+      <strong style="color: #f45b8e;">Cool!!!...😎 Login using any one of the below applications  </strong> <br>
+    </div>
+    <div fxFlex *ngIf = "noFlag" style="text-align: center;">      
+      <strong style="color: #f45b8e;"> No Problem!!! We respect your privacy. 😇 </strong><br>
+      <strong style="color: #f45b8e;">Sign Up/Sign In Anonymously 👍 </strong>
+    </div>
   </div>
-  <div class="loginContainer">
-    
-    <!-- <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="2vw">       -->
+  <div class="loginContainer"> 
+   
       <div *ngIf = "yesFlag" [ngClass]="{'quickLogin_Yes': yesFlag, 'quickLogin_No': noFlag, 'quickLogin_Already': alreadyFlag}">
         <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="2vh">
           <div style="margin-top: 2vh;">
@@ -41,45 +46,13 @@
           </div>     
                   
         </div>
-      </div>     
-      <div *ngIf = "alreadyFlag" [ngClass]="{'quickLogin_Yes': yesFlag, 'quickLogin_No': noFlag, 'quickLogin_Already': alreadyFlag}">
-        <div fxLayout="column" fxLayoutAlign="center center">
-          <div style="margin-top: 3vh;">
-            <div fxLayoutAlign="center center">
-              <mat-form-field *ngIf="login">
-                <mat-select [(ngModel)]="selectedValue" name="loginTypes" (selectionChange)="typeChange()">
-                  <mat-option *ngFor="let useType of types" [value]="useType.value" >
-                    {{useType.viewValue}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-          </div>
-          <div *ngIf="login">
-            <div fxLayout="column">
-              
-              <div fxFlex="50" style="margin-top: 2vh;">
-                <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
-                  <mat-form-field>
-                    <input matInput  formControlName="userName" placeholder="{{somePlaceholder}}">
-                  </mat-form-field>
-                  <br>
-                  <mat-form-field>
-                    <input matInput  type="password" formControlName="password" placeholder="Password">
-                  </mat-form-field> 
-                  <div *ngIf="invalidLogin">
-                    <span class="error-message">{{errorMsg}}</span>
-                  </div>
-                  <br>
-                  <button mat-raised-button color="primary" type="submit" class="butMob button_outline">Login</button>&nbsp;&nbsp;
-                  <button (click)="resetForm(1)" mat-raised-button class="button_dark">Reset</button>
-                </form>
-              </div>    
-            </div>  
-          </div>    
-        </div>
-      </div>
-          <div *ngIf = "noFlag" [ngClass]="{'quickLogin_Yes': yesFlag, 'quickLogin_No': noFlag, 'quickLogin_Already': alreadyFlag}"> 
+    </div>
+      <div *ngIf = "noFlag" [ngClass]="{'quickLogin_Yes': yesFlag, 'quickLogin_No': signUp, 'quickLogin_Already': login}">
+          <mat-tab-group mat-stretch-tabs [(selectedIndex)]="selectedTab" (selectedTabChange)="onTabChanged($event)" ngStyle.gt-sm="padding-bottom: 1vw;">
+            <mat-tab label="Login"></mat-tab>
+            <mat-tab label="SignUp"></mat-tab>
+          </mat-tab-group> 
+          <div *ngIf = "signUp"> 
             <div fxLayout="column" style="margin-left: 10vw;">             
               <div fxFlex="50" style="margin-top: 2vh;">
                 <form [formGroup]="signUpForm">
@@ -144,6 +117,44 @@
               </div>   
             </div>      
           </div>
+          <div *ngIf="login">
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <div style="margin-top: 3vh;">
+                <div fxLayoutAlign="center center">
+                  <mat-form-field *ngIf="login">
+                    <mat-select [(ngModel)]="selectedValue" name="loginTypes" (selectionChange)="typeChange()">
+                      <mat-option *ngFor="let useType of types" [value]="useType.value" >
+                        {{useType.viewValue}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div *ngIf="login">
+                <div fxLayout="column">
+                  
+                  <div fxFlex="50" style="margin-top: 2vh;">
+                    <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+                      <mat-form-field>
+                        <input matInput  formControlName="userName" placeholder="{{somePlaceholder}}">
+                      </mat-form-field>
+                      <br>
+                      <mat-form-field>
+                        <input matInput  type="password" formControlName="password" placeholder="Password">
+                      </mat-form-field> 
+                      <div *ngIf="invalidLogin">
+                        <span class="error-message">{{errorMsg}}</span>
+                      </div>
+                      <br>
+                      <button mat-raised-button color="primary" type="submit" class="butMob button_outline">Login</button>&nbsp;&nbsp;
+                      <button (click)="resetForm(1)" mat-raised-button class="button_dark">Reset</button>
+                    </form>
+                  </div>    
+                </div>  
+              </div>    
+            </div>
+          </div>
+        </div>
         </div>
     <!-- </div> -->
     

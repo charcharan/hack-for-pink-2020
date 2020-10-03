@@ -12,7 +12,7 @@ Weather Card Styling
     padding: 1rem;
     margin: 2rem;
     width: 77rem;
-    height: 39rem;
+    height: 43rem;
     background-color: white;
     border-radius: 1.75rem;
     animation: slideup 1s ease-in-out, fadein 1.25s ease-in-out 0ms 1;
@@ -172,7 +172,7 @@ Weather Card Styling
   .quickLogin_No{
     background-color: white;
     border-radius: 1.75rem;
-    height: 23rem;
+    height: 25rem;
     border: 2px solid #e68ab9;
     @media only screen and (max-width: 600px) {
       height: 39rem;
@@ -323,4 +323,4 @@ Weather Card Styling
 
   .mat-radio-button ~ .mat-radio-button {
     margin-left: 16px;
-  }
+  } 

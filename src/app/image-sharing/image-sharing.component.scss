@@ -55,7 +55,6 @@
 }
 
 table, th, td {
-  border: 1px solid black;
   align-items: center;
 }
 
@@ -63,3 +62,23 @@ table, th, td {
   cursor: pointer;
   color: palevioletred;
 }
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color:#e8629a;
+  color: white;
+}
+

@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy,Component, OnInit, ViewChild } from '@angular/c
 import { FormBuilder, FormGroup, Validators,AbstractControl } from '@angular/forms';
 import { Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
+import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
 
 @Component({
   selector: 'app-make-a-wish',
@@ -44,6 +45,17 @@ export class MakeAWishComponent implements OnInit {
 
   cancelForm():void {
     this.router.navigate(['/warrior']);
+  }
+
+  register(){
+    const dialogRef = this.dialog.open(DialogOverviewComponent, {
+      data: {
+        action: "wish"
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
 }

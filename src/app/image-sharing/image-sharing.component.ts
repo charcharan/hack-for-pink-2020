@@ -86,6 +86,19 @@ export class ImageSharingComponent implements OnInit {
     });
   }
 
+  shareWith(){
+    const dialogRef = this.dialog.open(DialogOverviewComponent,{
+      data:{
+        action:'share',
+        fileName: this.warriors[0].files[0],
+        doctors: this.doctors.map(x=>x.name)
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.openNotification();
+    });
+  }
+
   openPendingApproval(){
     const dialogRef = this.dialog.open(DialogOverviewComponent,{
       data:{
