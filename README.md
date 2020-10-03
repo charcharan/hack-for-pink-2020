@@ -90,3 +90,13 @@ npm run dev
 
 5. Visit http://localhost:4200
 ---
+
+## Deployment Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c0d43d58-bdcb-4561-b0c8-9147975eb849/deploy-status)](https://app.netlify.com/sites/flamingo-bteam/deploys)
+
+---
+
+## License 📄
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

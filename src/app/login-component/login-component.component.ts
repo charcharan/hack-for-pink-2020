@@ -56,6 +56,7 @@ export class LoginComponentComponent implements OnInit {
     window.scrollTo(0,0);
     this.selectedValue = 1;    
     this.invalidLogin = false;
+    this.yesOrNo = 'yes';
     // if(this.selectedValue === 0){
     //   this.login = true;
     //   this.signUp = false;
