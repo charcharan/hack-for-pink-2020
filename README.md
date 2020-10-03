@@ -1,16 +1,39 @@
 ![Flamingo Logo](/src/assets/loginlogo.png)
 
 A Progressive Web App (PWA) which can be used by Breast Cancer Warriors, Doctors and Angels in any devices like Mobile/Laptop/Desktop. <br/>
+Please check the below presentation for further details on the application.<br/> 
+[B-Team_Flamingo_Infosys.pptx](/B-Team_Flamingo_Infosys.pptx)
+
+---
+## Team
+- Arun Gopala Krishnan K R
+- Balaji Ashok Kumar
+- Jayalakshmi Tirupathi
+- Divya Lakshmi Anna Ganesh
+- Surendar Mohanraj
+- Venkata Sai Charan Amarthaluru
 
 ---
 
-## Technologies used 🛠️
-- Angular
-- ExpressJS
-- Angular Material
-- HTML5
-- CSS3
-- MySQL
+## Warrior Functionalities
+![Warrior](/src/assets/warrior.png)
+
+---
+
+## Doctor/Psychiatrist Functionalities
+![Doctor](/src/assets/doctor.png)
+
+---
+
+## Angel Functionalities
+![Angel](/src/assets/angel.png)
+
+---
+
+## Live Demo
+The live demo of this PWA application is available in below link.
+
+**https://flamingo-bteam.netlify.app/**
 
 ---
 
@@ -21,6 +44,16 @@ A Progressive Web App (PWA) which can be used by Breast Cancer Warriors, Doctors
 | Warrior    | warrior@gmail.com | Warrior123    |
 | Doctor     | doctor@gmail.com  | Doctor123     |
 | Angel      | angel@gmail.com   | Angel123      |
+---
+
+## Technologies used 🛠️
+- Angular
+- ExpressJS
+- Angular Material
+- HTML5
+- CSS3
+- MySQL
+
 ---
 
 ## Development
