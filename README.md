@@ -15,18 +15,9 @@ Please check the below presentation for further details on the application.<br/>
 
 ---
 
-## Warrior Functionalities
+## Application Functionalities
 ![Warrior](/src/assets/warrior.png)
-
----
-
-## Doctor/Psychiatrist Functionalities
-![Doctor](/src/assets/doctor.png)
-
----
-
-## Angel Functionalities
-![Angel](/src/assets/angel.png)
+![Others](/src/assets/others.png)
 
 ---
 
