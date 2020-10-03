@@ -8,7 +8,8 @@ import { LoginService } from '../services/login.service';
   styleUrls: ['./emotion-dialog.component.scss']
 })
 export class EmotionDialogComponent implements OnInit {
-
+  emojiInd : boolean = false;
+  emojiStatus : string = "";
   constructor(public dialogRef: MatDialogRef<EmotionDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
               private toastr : ToastrService,private loginSrv : LoginService) { }
 
@@ -18,5 +19,13 @@ export class EmotionDialogComponent implements OnInit {
     this.loginSrv.surveyFlag = false;
     this.dialogRef.close();
     this.toastr.success("Thanks for your interest.")
+  }
+  showTxt(input : string) {
+    this.emojiInd = true;
+    this.emojiStatus = input;
+  }
+  openChatBot() {
+    this.loginSrv.surveyFlag = false;
+    document.getElementById('engt-launcher-button').click();
   }
 }

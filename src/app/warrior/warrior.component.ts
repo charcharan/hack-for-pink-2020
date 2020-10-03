@@ -21,7 +21,12 @@ export class WarriorComponent implements OnInit {
   }
 
   openReportScanning(){
+    let width = window.screen.width < 599 ? '90%' : '48%'
     const dialogRef = this.dialog.open(DialogOverviewComponent,{
+      maxWidth : width,
+      height : '80%',
+      disableClose : true,
+      hasBackdrop : true,
       data:{
         action:'ReportScanning'
       }
@@ -43,10 +48,10 @@ export class WarriorComponent implements OnInit {
   }
 
   openEmotionDialog() {
-    let width = window.screen.width < 599 ? '80%' : '48%'
+    let width = window.screen.width < 599 ? '90%' : '48%'
     const dialogRef = this.dialog.open(EmotionDialogComponent,{
-      width : width,
-      height : '40%',
+      maxWidth : width,
+      height : '55%',
       disableClose : true,
       hasBackdrop : true,
       data:{

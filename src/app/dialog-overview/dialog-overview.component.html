@@ -39,8 +39,9 @@
 <div *ngIf="data.action=='ReportScanning'">
   <mat-dialog-content class="mat-typography">   
     <div id="app">
-      <div><video #video id="video" width="640" height="480" autoplay></video></div>
-      <div><button id="snap" (click)="capture()">Snap Photo</button></div>
+      <!-- <div><video #video id="video" width="640" height="480" autoplay></video></div> -->
+      <img src="assets/doc_scan_icon.png" ngClass.gt-md="login-logo" ngClass.lt-md="login-logo-mobile"> 
+      <div><button id="snap" (click)="capture()" class="button_outline" mat-button>Snap Photo</button></div>
       <canvas #canvas id="canvas" width="640" height="480"></canvas>
       <ul>
           <li *ngFor="let c of captures">
@@ -50,8 +51,8 @@
     </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button  (click)="saveReport()">Ok</button>
+  <button mat-button mat-dialog-close class="button_dark">Cancel</button>
+  <button mat-button  (click)="saveReport()"  class="button_outline">Ok</button>
 </mat-dialog-actions>
 </div>
 
@@ -105,4 +106,14 @@
   <button mat-button mat-dialog-close>Yes</button>
   <button mat-button mat-dialog-close>No</button>
 </mat-dialog-actions>
+</div>
+
+<div *ngIf="data.action==='showImage'">
+  <mat-dialog-content class="mat-typography">  
+    <h2 align="center">ECG Image</h2> 
+    <img src="assets/ECG.jpg" ngClass.gt-md="login-logo" ngClass.lt-md="login-logo-mobile"> 
+</mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close  class="button_dark">CLOSE</button>
+  </mat-dialog-actions>  
 </div>

@@ -11,6 +11,7 @@ body {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  margin: 0vw 0vw 0vw 3vw;
 }
 #video {
   background-color: #000000;
@@ -51,4 +52,13 @@ ul.SimpleMenu li {
 .mat-icon{
   cursor: pointer;
   color: palevioletred;
+}
+.login-logo{
+  width: 360px;
+  height: 346px;
+}
+.login-logo-mobile{
+  width: 70px;
+  height: 70px;
+  border-radius: 4vw;
 }

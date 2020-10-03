@@ -3,7 +3,7 @@
           <table class = "mat-elevation-z8 table-prop marginTop"> 
               <thead>
                 <tr>
-                  <th><mat-checkbox></mat-checkbox></th>
+                  <th><mat-checkbox (change)="selectAllcheckBox()"></mat-checkbox></th>
                   <th>File Name</th>
                   <th>View</th>
                   <th *ngIf="userType !=='doctor'">Download</th>
@@ -14,9 +14,9 @@
                 </tr>
               </thead>
               <tr *ngFor="let file of fileList">
-                <td><mat-checkbox></mat-checkbox></td>
+                <td><mat-checkbox  [checked]="checkAtrr"></mat-checkbox></td>
                 <td>{{file}}</td>
-                <td><span class="material-icons mat-icon">pageview</span></td>
+                <td><span class="material-icons mat-icon" (click)="openImage()">pageview</span></td>
                 <td *ngIf="userType !=='doctor'"><span class="material-icons mat-icon">cloud_download</span></td>
                 <td *ngIf="userType !=='doctor'"><span class="material-icons mat-icon">delete</span></td>
                 <td *ngIf="userType !=='doctor'"><span class="mat-icon" (click)="openSharedWith()"><i>2</i></span></td>

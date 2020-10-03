@@ -45,6 +45,7 @@ export class ImageSharingComponent implements OnInit {
     ];
 
   selectedValue:number=101;
+  checkAtrr : boolean = false;
   constructor(private login : LoginService,private toastr:ToastrService,public dialog:MatDialog) { }
 
   ngOnInit() {
@@ -105,5 +106,17 @@ export class ImageSharingComponent implements OnInit {
   })
 
 }
-  
+selectAllcheckBox () {
+  this.checkAtrr = !this.checkAtrr;
+}
+openImage() {
+  const dialogRef = this.dialog.open(DialogOverviewComponent,{
+    data:{
+      action:'showImage',
+    }
+  });
+  dialogRef.afterClosed().subscribe(result => {
+   
+  });
+}
 }
