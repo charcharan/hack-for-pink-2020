@@ -356,7 +356,8 @@ export class LoginComponentComponent implements OnInit {
         this.router.navigate(['/warrior']);
       });
       // this.runTimer();		
-		}	else if(data.code == 200 && data.userType === "angel"){     
+		}	else if(data.code == 200 && data.userType === "angel"){   
+      this.loginService.userType = "angel";  
       this.router.navigate(['/angel']);
     } else {
       this.invalidLogin = true;
