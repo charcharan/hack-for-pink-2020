@@ -8,10 +8,10 @@
     <strong style="color: #f45b8e;">Ready to be you ?</strong>    
     <mat-radio-group aria-label="Select an option" [(ngModel)]="yesOrNo" (change)="clickEvent($event)">
       <mat-radio-button value="yes">Yes</mat-radio-button>
-      <mat-radio-button value="no">No</mat-radio-button>
+      <mat-radio-button value="no">No, Be anonymous</mat-radio-button>
     </mat-radio-group>
     <div fxFlex *ngIf = "yesFlag" style="text-align: center;">      
-      <strong style="color: #f45b8e;">Cool!!!...😎 Login using any one of the below applications  </strong> <br>
+      <strong style="color: #f45b8e;">Cool!!!...😎 Login using any one of the below social media  </strong> <br>
     </div>
     <div fxFlex *ngIf = "noFlag" style="text-align: center;">      
       <strong style="color: #f45b8e;"> No Problem!!! We respect your privacy. 😇 </strong><br>

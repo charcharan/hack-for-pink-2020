@@ -99,6 +99,22 @@ export class ImageSharingComponent implements OnInit {
     });
   }
 
+  openReportScanning(){
+    let width = window.screen.width < 599 ? '90%' : '48%'
+    const dialogRef = this.dialog.open(DialogOverviewComponent,{
+      maxWidth : width,
+      height : '80%',
+      disableClose : true,
+      hasBackdrop : true,
+      data:{
+        action:'ReportScanning'
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+     
+    });
+  }
+
   openPendingApproval(){
     const dialogRef = this.dialog.open(DialogOverviewComponent,{
       data:{

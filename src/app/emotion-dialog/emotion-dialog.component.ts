@@ -19,7 +19,7 @@ export class EmotionDialogComponent implements OnInit {
     this.loginSrv.surveyFlag = false;
     this.dialogRef.close();
     if(value === ''){
-      this.toastr.success("Thanks for your interest.");
+      this.toastr.success("Thanks for your response.");
     }
   }
   showTxt(input : string) {

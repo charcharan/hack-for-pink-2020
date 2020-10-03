@@ -19,15 +19,15 @@
                 <td><span class="material-icons mat-icon" (click)="openImage()">pageview</span></td>
                 <td *ngIf="userType !=='doctor'"><span class="material-icons mat-icon">cloud_download</span></td>
                 <td *ngIf="userType !=='doctor'"><span class="material-icons mat-icon">delete</span></td>
-                <td *ngIf="userType !=='doctor'"><span class="mat-icon" (click)="openSharedWith()"><i>2</i></span></td>
-                <td *ngIf="userType !=='doctor'"><span class="mat-icon" (click)="openPendingApproval()"><i>3</i></span></td>
-                <td *ngIf="userType !=='doctor'"><span>2020-10-01 08:30</span></td>
+                <td *ngIf="userType !=='doctor'"><span class="mat-icon" (click)="openSharedWith()"><i><u>2</u></i></span></td>
+                <td *ngIf="userType !=='doctor'"><span class="mat-icon" (click)="openPendingApproval()"><i><u>3</u></i></span></td>
+                <td *ngIf="userType !=='doctor'"><span>10-01-2020 8:30</span></td>
               </tr>
             </table>
         <div fxFlex="30" fxLayout="row" fxLayoutGap="2vw">
         <button mat-raised-button color="primary" type="submit" class="butMob button_outline" (click)="shareWith()" >Share</button>
         <button mat-raised-button *ngIf="userType !== 'doctor'" color="primary" class="butMob button_outline">Upload File</button>
-        <button mat-raised-button *ngIf="userType !== 'doctor'" color="primary" class="butMob button_outline">Scan File</button>
+        <button mat-raised-button *ngIf="userType !== 'doctor'" color="primary" class="butMob button_outline" (click)="openReportScanning()">Scan File</button>
       </div>
     </div>
 </div>

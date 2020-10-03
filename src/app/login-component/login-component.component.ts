@@ -47,22 +47,22 @@ export class LoginComponentComponent implements OnInit {
      {"value":2,"viewValue":"Doctor"},
      {"value":3,"viewValue":"Angel"}
     ];
-  yesFlag:boolean=false;
+  yesFlag:boolean=true;
   noFlag:boolean=false;
   alreadyFlag:boolean = false;
-  selectedTab:number=1;
-  yesOrNo:string;
+  selectedTab:number=-1;
+  yesOrNo:string = 'yes';
   ngOnInit() {    
     window.scrollTo(0,0);
     this.selectedValue = 1;    
     this.invalidLogin = false;
-    if(this.selectedValue === 0){
-      this.login = true;
-      this.signUp = false;
-    }else if(this.selectedValue === 1){
-      this.login = false;
-      this.signUp = true;
-    }
+    // if(this.selectedValue === 0){
+    //   this.login = true;
+    //   this.signUp = false;
+    // }else if(this.selectedValue === 1){
+    //   this.login = false;
+    //   this.signUp = true;
+    // }
     this.somePlaceholder = "Warrior Name";
     this.othersLogin = true;
     this.loginForm = this.formBuilder.group({
