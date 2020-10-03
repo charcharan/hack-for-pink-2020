@@ -1,8 +1,10 @@
 
  <!-- Test Flow with positive steps -->
+<div class="heading"><span ><img class="heading-img" src="assets/mamogram.png" ></span>Tests and procedures used to diagnose Breast Cancer</div>
+ <div>
  <mat-accordion  ngClass.gt-md="test-flow"  ngClass.lt-md="test-flow-mobile"
  class="example-headers-align" fxLayoutGap="2vw">
-  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle ngClass.xs="expansion-panel" >
+  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle ngClass="align" class="expansion-panel" >
     <mat-expansion-panel-header ngClass.xs="expansion-header">
       <mat-panel-title>
         Mammogram
@@ -21,7 +23,7 @@
     </mat-action-row>
   </mat-expansion-panel>
 
-  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle ngClass.xs="expansion-panel">
+  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle ngClass="align" class="expansion-panel">
     <mat-expansion-panel-header fxLayout.xs="column"  ngClass.xs="expansion-header">
       <mat-panel-title>
         Breast UltraSound
@@ -40,7 +42,7 @@
     </mat-action-row>
   </mat-expansion-panel>
 
-  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle ngClass.xs="expansion-panel">
+  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle ngClass="align" class="expansion-panel">
     <mat-expansion-panel-header  ngClass.xs="expansion-header">
       <mat-panel-title>
        Breast Biospy
@@ -59,7 +61,7 @@
     </mat-action-row>
   </mat-expansion-panel>
 
-  <mat-expansion-panel ngClass.gt-md="test-end" [expanded]="step === 3" (opened)="setStep(3)" hideToggle ngClass.xs="expansion-panel">
+  <mat-expansion-panel ngClass="align" ngClass.gt-md="test-end" [expanded]="step === 3" (opened)="setStep(3)" hideToggle class="expansion-panel">
     <mat-expansion-panel-header  ngClass.xs="expansion-header">
       <mat-panel-title>
         Breast MRI
@@ -78,5 +80,71 @@
     </mat-action-row>
   </mat-expansion-panel>
 
-</mat-accordion>
+  </mat-accordion>
+</div>
+
+<!--  Card-->
+<div class="heading">Warrior stories who undergone above procedures for Breast Cancer</div>
+<div style="margin-top: 2vw;" fxLayout="row" fxLayout.xs="column" fxLayoutGap="6.5vw" fxLayoutAlign="center center">
+<mat-card class="example-card">
+  <mat-card-header class="title-name">
+    <mat-card-title fxLayoutAlign="center center">Tyra</mat-card-title>
+    <mat-card-subtitle class="sub-title">Breast Biospy at 35</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/ribbon.png" ngClass="img-size">
+  <mat-card-content>
+    <p>
+    I have undergone biospy at the age of 35 and now am cancer free. Sometimes in life you have to take
+    hard decisions to make yourself mentally relaxed.
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-header class="title-name">
+    <mat-card-title fxLayoutAlign="center center">Shan</mat-card-title>
+    <mat-card-subtitle class="sub-title">Mammogram at 30</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/ribbon.png" ngClass="img-size">
+  <mat-card-content>
+    <p>
+      I have taken mammogram at the age of 30 and now am proceeding to Breast ultrasound for further confirmation. 
+      Stay strong and make it until you are cancer free.
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class="example-card">
+  <mat-card-header class="title-name">
+    <mat-card-title fxLayoutAlign="center center">Nikki</mat-card-title>
+    <mat-card-subtitle class="sub-title">Breast MRI at 45</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/ribbon.png" ngClass="img-size">
+  <mat-card-content>
+    <p>
+     I have taken Breast MRI at 45. First I was afraid, then I have built up my confidence and undergone this. 
+     Later I came to know that am cancer free.
+    </p>
+  </mat-card-content>
+</mat-card>
+
+
+<mat-card class="example-card">
+  <mat-card-header class="title-name">
+    <mat-card-title fxLayoutAlign="center center">Janice</mat-card-title>
+    <mat-card-subtitle class="sub-title">UltraSound at 25</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="assets/ribbon.png" ngClass="img-size">
+  <mat-card-content>
+    <p>
+      I have taken breast ultrasound at 25. First I was afraid, then I have built up my confidence and undergone this. 
+     Later I came to know that am cancer free.
+    </p>
+  </mat-card-content>
+</mat-card>
+
+</div>
+
+
+
 

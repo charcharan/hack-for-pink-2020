@@ -18,3 +18,53 @@
   height: 125px !important;
   padding: 2vw;
 }
+
+.align{
+  margin-left: 2vw;
+}
+
+// Screening
+
+.mat-list-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.example-card {
+  max-width: 225px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+
+.img-size{
+  max-width: 150px;
+  margin-left: 2.5vw;
+}
+
+.title-name{
+  margin-left: 3vw;
+}
+
+.sub-title{
+  font-style: italic;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.heading{
+  margin-top: 1vw;
+  font-style: oblique;
+  font-size: 30px;
+  font-weight: bold;
+  color: palevioletred;
+  margin-left: 2vw;
+}
+
+.heading-img{
+  max-width: 50px;
+}
+
+
