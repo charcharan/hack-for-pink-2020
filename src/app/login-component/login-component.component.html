@@ -118,25 +118,14 @@
             </div>      
           </div>
           <div *ngIf="login">
-            <div fxLayout="column" fxLayoutAlign="center center">
-              <div style="margin-top: 3vh;">
-                <div fxLayoutAlign="center center">
-                  <mat-form-field *ngIf="login">
-                    <mat-select [(ngModel)]="selectedValue" name="loginTypes" (selectionChange)="typeChange()">
-                      <mat-option *ngFor="let useType of types" [value]="useType.value" >
-                        {{useType.viewValue}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </div>
-              </div>
+            <div fxLayout="column" fxLayoutAlign="center center">              
               <div *ngIf="login">
                 <div fxLayout="column">
                   
                   <div fxFlex="50" style="margin-top: 2vh;">
                     <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
                       <mat-form-field>
-                        <input matInput  formControlName="userName" placeholder="{{somePlaceholder}}">
+                        <input matInput  formControlName="userName" placeholder="Username">
                       </mat-form-field>
                       <br>
                       <mat-form-field>

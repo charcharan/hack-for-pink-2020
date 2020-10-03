@@ -27,6 +27,11 @@ export class ImageSharingComponent implements OnInit {
     name : "Lucy",
     id : 103,
     files:["ECG.jpg","Mammogram.jpg","PathologyReport.jpg","OralReport.jpg"]
+  },
+  {
+    name : "Susan",
+    id : 105,
+    files:["ECG.jpg","Mammogram.jpg","PathologyReport.jpg","OralReport.jpg"]
   }
   ];
   doctors=[
@@ -46,6 +51,7 @@ export class ImageSharingComponent implements OnInit {
 
   selectedValue:number=101;
   checkAtrr : boolean = false;
+  warriorNames = ["Susan","Laura","Stacy","Rose"];
   constructor(private login : LoginService,private toastr:ToastrService,public dialog:MatDialog) { }
 
   ngOnInit() {

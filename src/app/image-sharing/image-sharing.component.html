@@ -1,3 +1,4 @@
+<div class="heading">Reports Sharing</div>
 <div ngClass.gt-sm="container-timeline" ngClass.lt-lg="container-timeline-mobile" fxLayoutAlign="center center" >
   <div fxFlex fxLayout="column" fxLayoutAlign="center center" class="card">
           <table class = "mat-elevation-z8 table-prop marginTop"> 
@@ -5,6 +6,7 @@
                 <tr>
                   <th><mat-checkbox (change)="selectAllcheckBox()"></mat-checkbox></th>
                   <th>File Name</th>
+                  <th *ngIf="userType ==='doctor'">Warrior Name</th>
                   <th>View</th>
                   <th *ngIf="userType !=='doctor'">Download</th>
                   <th *ngIf="userType !=='doctor'">Delete</th>
@@ -13,9 +15,10 @@
                   <th *ngIf="userType !=='doctor'">Last Updated</th>
                 </tr>
               </thead>
-              <tr *ngFor="let file of fileList">
+              <tr *ngFor="let file of fileList;let i=index;">
                 <td><mat-checkbox  [checked]="checkAtrr"></mat-checkbox></td>
-                <td>{{file}}</td>
+                <td>{{fileList[i]}}</td>     
+                <td *ngIf="userType ==='doctor'">{{warriorNames[i]}}</td>           
                 <td><span class="material-icons mat-icon" (click)="openImage()">pageview</span></td>
                 <td *ngIf="userType !=='doctor'"><span class="material-icons mat-icon">cloud_download</span></td>
                 <td *ngIf="userType !=='doctor'"><span class="material-icons mat-icon">delete</span></td>

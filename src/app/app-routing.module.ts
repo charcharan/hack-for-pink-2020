@@ -71,6 +71,10 @@ const routes: Routes = [
     path: 'payment',
     component: PaymentDetailsComponent
   },
+  {
+    path: 'wishList',
+    component: AngelViewComponent
+  },
   
 ];
 

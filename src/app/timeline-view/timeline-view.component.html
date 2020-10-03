@@ -1,7 +1,5 @@
-<div ngClass.gt-sm="container-timeline" ngClass.lt-lg="container-timeline-mobile">
-  <div fxLayoutAlign="center center">
-    <h2><b>Journey of Warrior</b></h2>
-</div>
+<div class="heading">Journey of Warrior</div>
+<div ngClass.gt-sm="container-timeline" ngClass.lt-lg="container-timeline-mobile">    
   <mgl-timeline [toggle]="toggle" [alternate]="true" [side]="side">
     <mgl-timeline-entry *ngFor="let entry of entries; let i = index;" (expand)="onExpandEntry($event, i)">
       <mgl-timeline-entry-header (click)="onHeaderClick($event)">

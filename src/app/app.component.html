@@ -23,8 +23,7 @@
         <!-- Doctor links -->
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/imageSharing" routerLinkActive="link-active">Image Sharing</li>
         <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/perReq" routerLinkActive="link-active">Counseling/Motivational Support</li>
-        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Raising Funds</li>
-        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/calendar" routerLinkActive="link-active">Notifications</li>
+        <li class="menu-link" *ngIf="userType==='doctor'" [routerLinkActiveOptions]="{exact:true}" routerLink="/wishList" routerLinkActive="link-active">Raising Funds</li>
         <!-- Warrior links -->
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/timeLine" routerLinkActive="link-active" >My Timeline</li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/screeningMethods" routerLinkActive="link-active">Screening Methods</li>
@@ -32,7 +31,6 @@
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/docAppointment" routerLinkActive="link-active">Book doctor appointment</li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/nearByHos" routerLinkActive="link-active" >Near by centers details</li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/makeAwish" routerLinkActive="link-active" >Make a Wish</li>
-        <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/pendingRequest" routerLinkActive="link-active">Document Scanning</li>
         <!-- <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Notifications</li> -->
         <!-- Angel links -->
         <li class="menu-link" *ngIf="userType==='angel'" [routerLinkActiveOptions]="{exact:true}" routerLink="/wishList" routerLinkActive="link-active" >List of Wishes</li>
