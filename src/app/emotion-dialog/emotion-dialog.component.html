@@ -12,7 +12,7 @@
     </div>
     <div mat-dialog-actions align="end">
       <button mat-button mat-dialog-close class="button_outline" (click)="openChatBot()" *ngIf="emojiInd">Yes</button>
-      <button mat-button mat-dialog-close class="button_outline">Close</button>
+      <button mat-button mat-dialog-close class="button_dark" (click)="closePop('close')">Close</button>
     </div>
 </div>
 <div *ngIf="data.action === 'doctor'">
@@ -23,6 +23,6 @@
   </div>
   <div mat-dialog-actions fxLayoutAlign="center center">
     <button mat-button mat-dialog-close class="button_outline" (click)="openChatBot()">Yes</button>
-    <button mat-button mat-dialog-close class="button_outline" (click)="closePop('close')">No</button>
+    <button mat-button mat-dialog-close class="button_dark" (click)="closePop('close')">No</button>
   </div>
 </div>

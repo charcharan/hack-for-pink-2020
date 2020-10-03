@@ -1,14 +1,13 @@
 <div fxLayoutAlign="center center">
-  <h3><strong>Hospitals near to your current location.</strong></h3>
+  <h3 class="heading"><strong>Hospitals near to your current location.</strong></h3>
 </div>
 
 <mat-accordion>
 
-	<mat-expansion-panel style="width: 81vw;
-  margin-left: 7vw;margin-top:2vh;">
-		<mat-expansion-panel-header [collapsedHeight]="'140px'" [expandedHeight]="'190px'">
-      <div fxLayout="row" fxLayoutAlign="center center" >
-        <div fxFlex="50">
+	<mat-expansion-panel ngClass.xs="expansionPanel-mobile" class="expansionPanel">
+		<mat-expansion-panel-header [collapsedHeight]="'140px'" [expandedHeight]="'190px'" ngClass.xs="headingView">
+      <div fxLayout="row" >
+        <div fxFlex="50" fxFlex.xs="35">
           <img src="assets/hos.png" alt="doctor" style="width:100px;height:100px;display: block;border-radius: 50%;">
         </div>
         <div fxFlex="50">
@@ -16,7 +15,7 @@
           <br>
           No A A 16, 3rd Main Road, Anna Nagar, Chennai - 600040, Behind Nalli Silks 
           <br>
-          www.boneandjointindia.com
+          www.researchInstiteHospital.com
         </div>
       </div>      
 		</mat-expansion-panel-header>
@@ -26,9 +25,8 @@
       <button mat-raised-button color="accent">Show in Map</button>
     </div>
   </mat-expansion-panel>
-  <mat-expansion-panel style="width: 81vw;
-  margin-left: 7vw;margin-top:2vh;">
-		<mat-expansion-panel-header [collapsedHeight]="'140px'" [expandedHeight]="'190px'">
+  <mat-expansion-panel ngClass.xs="expansionPanel-mobile" class="expansionPanel">
+		<mat-expansion-panel-header [collapsedHeight]="'140px'" [expandedHeight]="'190px'" ngClass.xs="headingView">
       <div fxLayout="row" >
         <div fxFlex="25">
           <img src="assets/hos1.png" alt="doctor" style="width:100px;height:100px;display: block;border-radius: 50%;">
@@ -48,9 +46,8 @@
       <button mat-raised-button color="accent">Show in Map</button>
     </div>
   </mat-expansion-panel>
-  <mat-expansion-panel style="width: 81vw;
-  margin-left: 7vw;margin-top:2vh;">
-		<mat-expansion-panel-header [collapsedHeight]="'140px'" [expandedHeight]="'190px'">
+  <mat-expansion-panel ngClass.xs="expansionPanel-mobile" class="expansionPanel">
+		<mat-expansion-panel-header [collapsedHeight]="'140px'" [expandedHeight]="'190px'" ngClass.xs="headingView">
       <div fxLayout="row" >
         <div fxFlex="25">
           <img src="assets/hos2.jpg" alt="doctor" style="width:100px;height:100px;display: block;border-radius: 50%;">

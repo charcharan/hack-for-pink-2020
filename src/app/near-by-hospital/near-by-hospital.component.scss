@@ -49,4 +49,21 @@
     word-wrap: break-word;
   }
   
-  
+  .headingView {
+      height: 170px !important;
+  }
+  .expansionPanel {
+  width: 81vw;   
+  margin: 1vw;
+  }
+  .expansionPanel-mobile {
+    width: 94vw; 
+    margin: 3vw;    
+  }
+  .heading {   
+    font-style: oblique;
+    font-size: 30px;
+    font-weight: bold;
+    color: palevioletred;    
+    text-align: center;
+  }
