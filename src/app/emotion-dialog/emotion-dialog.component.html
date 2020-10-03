@@ -1,7 +1,7 @@
-<div>  
+<div *ngIf="data.action === 'warrior'">  
     <div fxLayout="row">
-        <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile" (click)="closePop()">😄 <span class="emojiTxt">Amazing</span></h2>
-        <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile" (click)="closePop()">😊 <span class="emojiTxt">Happy</span></h2>
+        <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile" (click)="closePop('')">😄 <span class="emojiTxt">Amazing</span></h2>
+        <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile" (click)="closePop('')">😊 <span class="emojiTxt">Happy</span></h2>
         <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile" (click)="showTxt('neutral')">😐 <span class="emojiTxt">Neutral</span></h2>
         <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile" (click)="showTxt('sad')">☹ <span class="emojiTxt">Sad</span> </h2>
         <h2 mat-dialog-title class="emoji" ngClass.xs="emoji-mobile" (click)="showTxt('angry')">😡 <span class="emojiTxt">Angry</span></h2>
@@ -10,11 +10,22 @@
         <h3>Hi Warrior, Tell us how you are feeling today.</h3>
     </div>
     <div mat-dialog-actions *ngIf="!emojiInd">
-      <button mat-button mat-dialog-close class="button_outline">Close</button>
+      <button mat-button mat-dialog-close class="button_outline" (click)="closePop('close')">Close</button>
     </div>
     <div *ngIf="emojiInd">
       <h3>Sorry to see you in {{ emojiStatus }}. Would you like to talk with someone.</h3>
       <h4>Click Yes to chat!!</h4>
       <button mat-button mat-dialog-close class="button_outline" (click)="openChatBot()">Yes</button>
     </div>
+</div>
+<div *ngIf="data.action === 'doctor'">
+  <div mat-dialog-content fxLayoutAlign="center center"  fxLayout="column" style="text-align: center;">
+      <h3>Hi Doctor, below warrior needs attention. Do you want to chat with warrior.</h3>
+      <h3>Rajesh@123</h3>
+      <h4>Click Yes to chat!!</h4>
+  </div>
+  <div mat-dialog-actions fxLayoutAlign="center center">
+    <button mat-button mat-dialog-close class="button_outline" (click)="openChatBot()">Yes</button>
+    <button mat-button mat-dialog-close class="button_outline" (click)="closePop('close')">No</button>
+  </div>
 </div>

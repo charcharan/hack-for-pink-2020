@@ -15,10 +15,12 @@ export class EmotionDialogComponent implements OnInit {
 
   ngOnInit() {
   }
-  closePop(){
+  closePop(value : string){
     this.loginSrv.surveyFlag = false;
     this.dialogRef.close();
-    this.toastr.success("Thanks for your interest.")
+    if(value === ''){
+      this.toastr.success("Thanks for your interest.");
+    }
   }
   showTxt(input : string) {
     this.emojiInd = true;

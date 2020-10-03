@@ -12,6 +12,7 @@ import { AppointmentListComponent } from '../app/appointment-list/appointment-li
 import{ScreeningMethodsComponent} from '../app/screening-methods/screening-methods.component';
 import { AngelViewComponent } from '../app/angel-view/angel-view.component';
 import { DocAppointmentComponent } from '../app/doc-appointment/doc-appointment.component';
+import { NearByHospitalComponent } from '../app/near-by-hospital/near-by-hospital.component';
 const routes: Routes = [
   {
     path: '',
@@ -60,6 +61,10 @@ const routes: Routes = [
   {
     path: 'docAppointment',
     component: DocAppointmentComponent
+  },
+  {
+    path : 'nearByHos',
+    component : NearByHospitalComponent
   }
   
 ];

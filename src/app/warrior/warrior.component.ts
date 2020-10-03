@@ -55,7 +55,7 @@ export class WarriorComponent implements OnInit {
       disableClose : true,
       hasBackdrop : true,
       data:{
-        action:'open'
+        action:'warrior'
       }
     });
     dialogRef.afterClosed().subscribe(result => {
