@@ -13,6 +13,7 @@ import{ScreeningMethodsComponent} from '../app/screening-methods/screening-metho
 import { AngelViewComponent } from '../app/angel-view/angel-view.component';
 import { DocAppointmentComponent } from '../app/doc-appointment/doc-appointment.component';
 import { NearByHospitalComponent } from '../app/near-by-hospital/near-by-hospital.component';
+import { PaymentDetailsComponent } from '../app/payment-details/payment-details.component';
 const routes: Routes = [
   {
     path: '',
@@ -65,7 +66,11 @@ const routes: Routes = [
   {
     path : 'nearByHos',
     component : NearByHospitalComponent
-  }
+  },
+  {
+    path: 'payment',
+    component: PaymentDetailsComponent
+  },
   
 ];
 

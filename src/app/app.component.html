@@ -34,6 +34,8 @@
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/makeAwish" routerLinkActive="link-active" >Make a Wish</li>
         <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/pendingRequest" routerLinkActive="link-active">Document Scanning</li>
         <!-- <li class="menu-link" *ngIf="userType==='warrior'" [routerLinkActiveOptions]="{exact:true}" routerLink="/addAnnouncement" routerLinkActive="link-active" >Notifications</li> -->
+        <!-- Angel links -->
+        <li class="menu-link" *ngIf="userType==='angel'" [routerLinkActiveOptions]="{exact:true}" routerLink="/wishList" routerLinkActive="link-active" >List of Wishes</li>
         <li (click)="logout()" class="menu-link">Logout</li>
       </ul>
     </section>

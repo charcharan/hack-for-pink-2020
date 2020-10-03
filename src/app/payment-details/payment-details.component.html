@@ -1,0 +1,87 @@
+<div>
+  <mat-card class="card marginTop">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="example-header-image"></div> -->
+      <mat-card-title>
+        Payment Details
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="" #form="ngForm">
+        <div fxLayout="column" >
+          <label>Please fill the card details to make a payment</label>
+        </div>
+        
+        <div fxLayout="row" fxLayout.xs="column">
+          <div  fxFlex="40">
+            <p>Card Number</p>
+          <mat-form-field appearance="outline">
+              <input length="20" matInput type="text" maxlength="16"
+              #ccNumber
+              appIsValidCompetitorId (emitIsValdID)="idValidator($event)" 
+                  placeholder="Card Number" name="cardNo" required [(ngModel)]="cardNo"
+                 [errorStateMatcher]="matcher">
+              <!-- (keyup)="creditCardNumberSpacing()" -->
+
+          </mat-form-field>
+        </div>
+        <div  fxFlex="40">
+          <p>Card Holders Name</p>
+          <mat-form-field appearance="outline">
+            <input maxlength="20" matInput
+            type="text"
+            appIsValidCompetitorId (emitIsValdID)="idValidator($event)" 
+                placeholder="Card Holders Name" name="cardName" required [(ngModel)]="cardName"
+               [errorStateMatcher]="matcher">
+            <!-- (keyup)="creditCardNumberSpacing()" -->
+
+        </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column">
+          <div  fxFlex="40">
+            <p>Expiry Date</p>
+            <div fxLayout="row">
+          <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
+            <mat-select placeholder="Month">
+            <mat-option *ngFor="let food of months" [value]="food.value">
+              {{food.name}}
+            </mat-option>
+          </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="40" fxFlex.lt-sm="50">
+            <mat-select placeholder="Year">
+            <mat-option *ngFor="let food of year" [value]="food.value">
+              {{food.year}}
+            </mat-option>
+          </mat-select>
+          </mat-form-field>
+        </div>
+        </div>
+        <div  fxFlex="20">
+          <p>Cvv</p>
+          <mat-form-field appearance="outline">
+            <input maxlength="20" matInput
+            type="tel"
+            #ccNumber maxlength="3"
+            appIsValidCompetitorId (emitIsValdID)="idValidator($event)" 
+                placeholder="Cvv" name="cvv" required [(ngModel)]="cvv"
+               [errorStateMatcher]="matcher">
+            <!-- (keyup)="creditCardNumberSpacing()" -->
+            
+        </mat-form-field>
+          </div>
+         
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions fxLayout.lt-md="column" fxLayoutGap="2vw" fxLayout="row">
+      <button (click)="makePayment()" [disabled]="!form.valid" mat-raised-button color="primary">
+        Make Payment
+    </button>
+    <button (click)="cancelPayment()" mat-raised-button color="warn">
+        Cancel Payment
+    </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
